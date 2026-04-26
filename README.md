@@ -1,7 +1,7 @@
 # 📚 Summer Reading Program 2026 — SAT-Prep Edition
 ### Pine Forge Academy Parent's Association · High School · Summer 2026
 
-> *A complete summer reading program for grades 9–12, with interactive journals engineered to build SAT reading, writing, and vocabulary skills.*
+> *A complete summer reading program for grades 9–12, created by the Pine Forge Parent Association, with interactive journals engineered to build SAT reading, writing, and vocabulary skills.*
 
 ---
 
