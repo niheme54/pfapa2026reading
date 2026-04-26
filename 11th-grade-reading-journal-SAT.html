@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11th Grade Summer Reading Journal — SAT Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#2C1A0E;
+  --cover:#8B3A1A;
+  --spine:#5C2410;
+  --paper:#FDF8F0;
+  --paper2:#F7F0E4;
+  --ink:#1C1208;
+  --line:#E0D4BE;
+  --faint:#EAE0CC;
+  --terra:#C4622D;
+  --amber:#D4943A;
+  --slate:#3A4A5C;
+  --sage:#4A6B52;
+  --pen:#1A1A5C;
+  --sat:#1E3A5C;
+  --sat-bg:#EEF3FA;
+  --sat-border:#B8CCE4;
+}
+body{background:var(--bg);background-image:radial-gradient(ellipse at 30% 70%,rgba(196,98,45,.15) 0%,transparent 55%);min-height:100vh;font-family:'Montserrat',sans-serif;display:flex;flex-direction:column;align-items:center;padding:32px 16px 80px}
+
+/* COVER */
+.cover{width:100%;max-width:820px;background:linear-gradient(150deg,#A84020 0%,var(--cover) 40%,#6B2810 100%);border-radius:4px 12px 12px 4px;padding:48px 56px;position:relative;overflow:hidden;box-shadow:-10px 0 0 var(--spine),8px 12px 48px rgba(0,0,0,.55)}
+.cover::before{content:'';position:absolute;top:0;left:36px;width:6px;height:100%;background:repeating-linear-gradient(180deg,#7B2E14 0,#7B2E14 22px,#5C2410 22px,#5C2410 24px)}
+.cover::after{content:'';position:absolute;inset:18px 18px 18px 52px;border:1px solid rgba(255,255,255,.1);border-radius:3px;pointer-events:none}
+.cover-yr{font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,220,180,.5);padding-left:26px;margin-bottom:10px}
+.cover-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6.5vw,62px);font-weight:700;line-height:.95;color:#FDF4E8;padding-left:26px}
+.cover-h1 em{font-style:italic;color:var(--amber)}
+.cover-sub{font-size:11px;color:rgba(253,244,232,.4);letter-spacing:.07em;padding-left:26px;margin-top:12px}
+.cover-meta{margin-top:26px;padding-left:26px;display:flex;gap:30px;flex-wrap:wrap}
+.cf{display:flex;flex-direction:column;gap:4px}
+.cf label{font-size:8px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.cf input{background:transparent;border:none;border-bottom:1px solid rgba(212,148,58,.35);color:#FDF4E8;font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;padding:2px 0;width:185px;outline:none}
+.cf input::placeholder{color:rgba(255,255,255,.18)}
+.cf input:focus{border-bottom-color:var(--amber)}
+
+/* STATS */
+.statsbar{width:100%;max-width:820px;background:#1A0D05;padding:14px 56px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:-10px 0 0 #0E0602}
+.slbl2{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap}
+.stats{display:flex;gap:28px;flex:1}
+.sitem{display:flex;flex-direction:column;align-items:center}
+.snum{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--amber);line-height:1}
+.ssubl{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:2px}
+.progtrack{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;min-width:60px}
+.progfill{height:100%;background:var(--amber);border-radius:2px;transition:width .6s ease;width:0%}
+.progpct{font-size:11px;font-weight:600;color:var(--amber);min-width:34px;text-align:right}
+
+/* PRINT BUTTON */
+.print-btn-wrap{width:100%;max-width:820px;display:flex;justify-content:flex-end;padding:10px 0 0;gap:10px}
+.print-btn{background:var(--amber);color:#1C1208;border:none;padding:9px 22px;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;text-transform:uppercase}
+.print-btn:hover{background:#E4A840}
+.export-btn{background:transparent;color:var(--amber);border:1.5px solid var(--amber);padding:9px 22px;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;text-transform:uppercase}
+.export-btn:hover{background:rgba(212,148,58,.1)}
+
+/* TABS */
+.tabs{width:100%;max-width:820px;display:flex;gap:3px;padding-left:8px;margin-top:8px}
+.tab{flex:1;padding:11px 6px 9px;border:none;border-radius:6px 6px 0 0;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;color:rgba(255,255,255,.35);background:rgba(0,0,0,.22);transition:all .2s;text-align:center;line-height:1.3;position:relative;letter-spacing:.03em}
+.tab:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.65)}
+.tab.active{background:var(--paper);color:var(--ink)}
+.tnum{display:block;font-size:8px;opacity:.5;margin-bottom:2px;letter-spacing:.1em}
+.tck{position:absolute;top:5px;right:5px;font-size:10px;color:var(--sage);opacity:0;transition:opacity .2s}
+.tab.done .tck{opacity:1}
+
+/* BODY */
+.journal{width:100%;max-width:820px;background:var(--paper);border-radius:0 0 8px 8px;box-shadow:0 20px 56px rgba(0,0,0,.3),-10px 0 0 #C8B898;overflow:hidden}
+.panel{display:none}
+.panel.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* BOOK HEADER */
+.bh{padding:26px 56px 20px 78px;border-bottom:2px solid var(--faint);background:var(--paper2);position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.bh::before{content:'';position:absolute;left:60px;top:0;bottom:0;width:1px;background:rgba(196,98,45,.2)}
+.bh h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--ink)}
+.bh .auth{font-size:12px;font-style:italic;color:#8A7A68;margin-top:3px;font-family:'Cormorant Garamond',serif}
+.badge{padding:5px 14px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+
+/* SAT SKILLS */
+.skrow{padding:10px 56px 10px 78px;background:var(--sat-bg);border-bottom:1px solid var(--sat-border);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sklbl{font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sat);margin-right:4px}
+.chip{font-size:9px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(30,58,92,.1);color:var(--sat);border:1px solid rgba(30,58,92,.2);letter-spacing:.04em}
+
+/* STATUS */
+.srow{padding:12px 56px 12px 78px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--faint);background:var(--paper2);flex-wrap:wrap}
+.slbl{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9C8E80;white-space:nowrap}
+.sbtns{display:flex;gap:5px}
+.sbtn{padding:4px 13px;border-radius:20px;border:1.5px solid var(--faint);background:transparent;font-size:10px;font-weight:600;cursor:pointer;color:#9C8E80;transition:all .2s;font-family:'Montserrat',sans-serif}
+.sbtn:hover{border-color:#aaa;color:var(--ink)}
+.sbtn.on{border-color:currentColor}
+.stars{display:flex;gap:3px;margin-left:auto}
+.star{font-size:18px;cursor:pointer;color:var(--faint);transition:color .15s}
+.star.lit{color:var(--amber)}
+
+/* PAGE */
+.page{padding:28px 56px 28px 78px;background-image:repeating-linear-gradient(transparent,transparent 31px,var(--line) 31px,var(--line) 32px);background-size:100% 32px;background-position:0 8px;position:relative}
+.page::before{content:'';position:absolute;left:60px;top:0;bottom:0;width:1px;background:rgba(196,98,45,.18)}
+
+/* PROMPTS */
+.pb{margin-bottom:26px}
+.ph{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.pico{font-size:15px}
+.plbl{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9C8E80}
+.stag{font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--sat);color:#fff;padding:2px 8px;border-radius:10px;margin-left:auto}
+.pq{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--ink);margin-bottom:7px;line-height:1.7;padding-left:26px}
+.ptip{font-size:10px;color:var(--sat);background:var(--sat-bg);border-left:3px solid var(--sat);padding:5px 12px;border-radius:0 4px 4px 0;margin:0 0 10px 26px;line-height:1.55;font-family:'Montserrat',sans-serif}
+.jta{width:100%;background:transparent;border:none;outline:none;resize:none;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pen);line-height:32px;padding:0;min-height:96px}
+.jta::placeholder{color:rgba(26,26,92,.18);font-style:italic}
+.div{border:none;border-top:1px dashed var(--faint);margin:8px 0 26px}
+
+/* EVIDENCE */
+.evbox{margin:6px 0 24px 26px;border-left:3px solid var(--amber);padding-left:16px}
+.evlbl{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;font-family:'Montserrat',sans-serif}
+.qta{width:100%;background:transparent;border:none;outline:none;resize:none;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#5C4030;line-height:32px;padding:0;min-height:64px}
+.qta::placeholder{color:rgba(92,64,48,.25)}
+
+/* SAT QUESTION */
+.satq{background:var(--sat-bg);border:1px solid var(--sat-border);border-radius:6px;padding:18px 20px;margin:0 0 26px 26px}
+.sqh{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sqt{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sat);font-family:'Montserrat',sans-serif}
+.sq{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink);line-height:1.65;margin-bottom:10px}
+.choices{display:flex;flex-direction:column;gap:6px}
+.ch{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-radius:4px;border:1.5px solid var(--sat-border);cursor:pointer;transition:all .2s;background:#fff}
+.ch:hover{border-color:var(--sat)}
+.ch.selected{border-color:var(--sat);background:rgba(30,58,92,.06)}
+.ch.correct{border-color:var(--sage);background:rgba(74,107,82,.08);pointer-events:none}
+.ch.wrong{border-color:var(--terra);background:rgba(196,98,45,.06);pointer-events:none}
+.cltr{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sat-border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--sat);flex-shrink:0;transition:all .2s;font-family:'Montserrat',sans-serif}
+.ch.selected .cltr{background:var(--sat);color:#fff;border-color:var(--sat)}
+.ch.correct .cltr{background:var(--sage);color:#fff;border-color:var(--sage)}
+.ch.wrong .cltr{background:var(--terra);color:#fff;border-color:var(--terra)}
+.ctxt{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--ink);line-height:1.5;padding-top:3px}
+.chkbtn{margin-top:10px;background:var(--sat);color:#fff;border:none;border-radius:4px;padding:7px 20px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:.05em}
+.chkbtn:hover{background:#152C48}
+.sfb{margin-top:8px;font-size:12px;line-height:1.6;display:none;padding:8px 12px;border-radius:4px;font-family:'Montserrat',sans-serif}
+.sfb.show{display:block}
+.sfb.ok{background:rgba(74,107,82,.1);color:#2A4830;border:1px solid rgba(74,107,82,.25)}
+.sfb.no{background:rgba(196,98,45,.08);color:#7A3010;border:1px solid rgba(196,98,45,.2)}
+
+/* VOCAB */
+.vsec{margin-bottom:26px}
+.vcards{display:flex;flex-direction:column;gap:8px;margin-top:10px;padding-left:26px}
+.vc{background:#fff;border:1px solid var(--faint);border-radius:5px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:5px;border-left:3px solid var(--terra)}
+.vw{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--terra)}
+.vps{font-size:9px;font-style:italic;color:#9C8E80;margin-top:1px;font-family:'Montserrat',sans-serif}
+.vd{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--ink);grid-column:1;margin-top:2px;line-height:1.4}
+.vs2{font-size:11px;color:#6A5E50;grid-column:1;margin-top:4px;line-height:1.5;border-top:1px dashed var(--faint);padding-top:4px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.vdel{background:none;border:none;cursor:pointer;color:#ccc;font-size:16px;padding:0;line-height:1;align-self:start}
+.vdel:hover{color:var(--terra)}
+.vadd{margin-top:10px;padding-left:26px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;align-items:end}
+.vig{display:flex;flex-direction:column;gap:3px}
+.vig label{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9C8E80;font-family:'Montserrat',sans-serif}
+.vinp{background:transparent;border:none;border-bottom:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--ink);outline:none;padding:2px 0;width:100%}
+.vaddbtn{background:var(--terra);color:#fff;border:none;border-radius:4px;padding:7px 14px;font-size:10px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap;font-family:'Montserrat',sans-serif;letter-spacing:.05em}
+.vaddbtn:hover{background:#A0481E}
+.vdr{grid-column:1/-1;display:grid;grid-template-columns:2fr 1fr;gap:6px}
+
+/* SAVE BAR */
+.savebar{padding:14px 56px;border-top:1px solid var(--faint);background:var(--paper2);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.savn{font-size:11px;color:var(--sage);opacity:0;transition:opacity .3s;font-style:italic;font-family:'Cormorant Garamond',serif}
+.savn.show{opacity:1}
+.savebtn{background:var(--terra);color:#fff;border:none;padding:10px 28px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:.06em;transition:background .2s}
+.savebtn:hover{background:#A0481E}
+.clrbtn{background:none;border:1.5px solid var(--faint);color:#9C8E80;padding:8px 16px;border-radius:4px;font-size:11px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s}
+.clrbtn:hover{border-color:var(--terra);color:var(--terra)}
+.pgnum{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#C0B5A0;text-align:center;padding:10px;border-top:1px solid var(--faint)}
+
+/* ── PRINT STYLES ── */
+@media print{
+  body{background:#fff;padding:0}
+  .cover{background:var(--terra)!important;box-shadow:none!important;border-radius:0}
+  .statsbar,.tabs,.print-btn-wrap,.savebar{display:none!important}
+  .journal{box-shadow:none}
+  .panel{display:block!important;page-break-after:always}
+  .satq{background:#f8f8f8!important}
+  .ch{background:#fff!important}
+  .sfb{display:none!important}
+  .page{background-image:repeating-linear-gradient(transparent,transparent 31px,#ddd 31px,#ddd 32px)}
+  .jta,.qta,.vinp{border-bottom:1px solid #ccc}
+  .tab-ck,.tck{display:none}
+}
+
+@media(max-width:580px){
+  .bh,.page,.skrow,.srow,.savebar{padding-left:48px;padding-right:18px}
+  .bh::before,.page::before{left:32px}
+  .tab{font-size:9px;padding:8px 3px}
+  .cover{padding:28px 22px}
+  .statsbar{padding:10px 22px}
+  .vadd{grid-template-columns:1fr}
+  .vdr{grid-template-columns:1fr}
+}
+
+/* ── SHARED NAV ── */
+.site-nav{
+  position:sticky;top:0;z-index:9999;
+  background:rgba(20,18,12,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,.18);
+  padding:0 5vw;
+  display:flex;align-items:center;
+  height:52px;gap:0;
+}
+.nav-brand{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:15px;font-weight:700;font-style:italic;
+  color:#F7F3EC;text-decoration:none;
+  margin-right:28px;white-space:nowrap;
+  flex-shrink:0;
+}
+.nav-brand span{color:#C9943A}
+.nav-links{
+  display:flex;align-items:center;gap:2px;
+  overflow-x:auto;scrollbar-width:none;flex:1;
+}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{
+  font-family:'DM Mono','Courier New',monospace;
+  font-size:9px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(247,243,236,.45);
+  text-decoration:none;
+  padding:6px 12px;border-radius:3px;
+  white-space:nowrap;transition:all .2s;
+  border:1px solid transparent;
+}
+.nav-link:hover{color:#F7F3EC;background:rgba(255,255,255,.06);}
+.nav-link.active{
+  color:#C9943A;
+  border-color:rgba(201,168,76,.3);
+  background:rgba(201,168,76,.08);
+}
+.nav-burger{
+  display:none;background:none;border:none;cursor:pointer;
+  color:rgba(247,243,236,.6);font-size:18px;margin-left:auto;padding:4px;
+}
+@media(max-width:700px){
+  .site-nav{padding:0 16px}
+  .nav-links{display:none;position:absolute;top:52px;left:0;right:0;
+    background:rgba(14,12,8,.98);flex-direction:column;align-items:stretch;
+    padding:8px 16px 16px;border-bottom:1px solid rgba(201,168,76,.15);gap:2px;}
+  .nav-links.open{display:flex}
+  .nav-link{padding:10px 12px;font-size:10px}
+  .nav-burger{display:block}
+}
+
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">Summer <span>Reading</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link" data-page="index">🏠 Home</a>
+    <a href="summer-reading.html" class="nav-link" data-page="summer-reading">📚 Book List</a>
+    <a href="9th-grade-reading-journal-SAT.html" class="nav-link" data-page="9th">9th Journal</a>
+    <a href="10th-grade-reading-journal-SAT.html" class="nav-link" data-page="10th">10th Journal</a>
+    <a href="11th-grade-reading-journal-SAT.html" class="nav-link" data-page="11th">11th Journal</a>
+    <a href="12th-grade-reading-journal-SAT.html" class="nav-link" data-page="12th">12th Journal</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+
+
+<div class="cover">
+  <div class="cover-yr">11th Grade · Junior Year · SAT-Prep Edition · Summer 2026</div>
+  <div class="cover-h1">Summer<br><em>Reading Journal</em></div>
+  <div class="cover-sub">American Literature · Argument · Synthesis · Evidence — the complete SAT toolkit</div>
+  <div class="cover-meta">
+    <div class="cf"><label>Name</label><input type="text" id="sN" placeholder="Your name" oninput="saveMeta()"></div>
+    <div class="cf"><label>School</label><input type="text" id="sSc" placeholder="Your school" oninput="saveMeta()"></div>
+    <div class="cf"><label>Summer</label><input type="text" id="sYr" placeholder="2026" oninput="saveMeta()"></div>
+  </div>
+</div>
+
+<div class="statsbar">
+  <span class="slbl2">SAT Readiness</span>
+  <div class="stats">
+    <div class="sitem"><div class="snum" id="vcnt">0</div><div class="ssubl">Vocab Words</div></div>
+    <div class="sitem"><div class="snum" id="bcnt">0/5</div><div class="ssubl">Books Done</div></div>
+    <div class="sitem"><div class="snum" id="scnt">0%</div><div class="ssubl">Practice Score</div></div>
+  </div>
+  <div class="progtrack"><div class="progfill" id="pFill"></div></div>
+  <span class="progpct" id="pPct">0%</span>
+</div>
+
+<div class="print-btn-wrap">
+  <button class="export-btn" onclick="exportTxt()">⬇ Export as Text</button>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="sw(0,this)" id="tab-0"><span class="tnum">Book 1</span>Great Gatsby<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(1,this)" id="tab-1"><span class="tnum">Book 2</span>The Crucible<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Book 3A</span>Invisible Man<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Book 3B</span>Handmaid's Tale<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Indep.</span>My Choice<span class="tck">✓</span></button>
+</div>
+
+<div class="journal">
+
+<!-- ══════════════════════════════════
+     BOOK 1: THE GREAT GATSBY
+══════════════════════════════════ -->
+<div class="panel active" id="p-0">
+  <div class="bh">
+    <div><h2>The Great Gatsby</h2><div class="auth">F. Scott Fitzgerald · 1925 · Required</div></div>
+    <span class="badge" style="background:#FFF8E8;color:#9B6A1A;">American Dream · Symbol</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Symbolism</span><span class="chip">Narrative Distance</span><span class="chip">Argument Analysis</span><span class="chip">Diction & Tone</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(0,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(0,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(0,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-0"><span class="star" onclick="setR(0,1)">★</span><span class="star" onclick="setR(0,2)">★</span><span class="star" onclick="setR(0,3)">★</span><span class="star" onclick="setR(0,4)">★</span><span class="star" onclick="setR(0,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">💚</span><span class="plbl">Prompt 1 · Symbol Tracking</span><span class="stag">SAT: Reading</span></div>
+      <div class="pq">The green light, the Valley of Ashes, and the eyes of Doctor T.J. Eckleburg are among literature's most analyzed symbols. Choose two. For each: quote the passage where it appears most powerfully, explain its literal meaning, then its symbolic one, and show how Fitzgerald uses it to develop his central argument about the American Dream.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Symbol analysis is a high-frequency SAT question. The key move: literal meaning → symbolic meaning → how it serves the author's argument. Never stop at "it represents ___."</div>
+      <textarea class="jta" id="t0-p1" placeholder="Symbol 1: Literal → Symbolic → Fitzgerald's argument | Symbol 2: →" oninput="as(0)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="ph" style="margin-bottom:6px"><span class="pico">📌</span><span class="plbl">Cite the Text</span><span class="stag">SAT: Evidence</span></div>
+    <div class="ptip" style="margin-left:0;margin-bottom:10px">The SAT requires you to choose the quote that best supports a claim — not just any quote. Select the single sentence that most directly proves Fitzgerald is critiquing, not celebrating, the American Dream.</div>
+    <div class="evbox"><div class="evlbl">Best evidence quote (critiquing the Dream):</div><textarea class="qta" id="t0-ev" placeholder="&ldquo; ...exact line... &rdquo; (Ch. __)" oninput="as(0)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🎙️</span><span class="plbl">Prompt 2 · Narrator Reliability & Distance</span><span class="stag">SAT: Analysis</span></div>
+      <div class="pq">Nick Carraway claims to be "one of the few honest people" he has ever known. Is he? Find two moments where Nick's narration seems unreliable or selective. What does he leave out, minimize, or romanticize? What does Fitzgerald gain by choosing this narrator?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Unreliable narrators test your ability to read between the lines — a core SAT inference skill. The question is always: what does the text reveal that the narrator doesn't intend to reveal?</div>
+      <textarea class="jta" id="t0-p2" placeholder="Moment 1 of unreliability: &ldquo;...&rdquo; → What Nick hides: | Moment 2: | Why Fitzgerald chose Nick:" oninput="as(0)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">📐</span><span class="plbl">Prompt 3 · Fitzgerald's Argument: Evaluate It</span><span class="stag">SAT: Argument</span></div>
+      <div class="pq">The SAT includes argument evaluation questions. Practice here: what is Fitzgerald's central argument about the American Dream? Is it convincing? Identify his strongest piece of evidence (a scene or image) and his weakest point. Does the novel prove its case?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Evaluating argument quality — claim, strongest evidence, weakest point — is exactly what SAT argument questions test. A strong reader can praise and critique simultaneously.</div>
+      <textarea class="jta" id="t0-p3" placeholder="Fitzgerald's argument: | Strongest scene/evidence: | Weakest point: | Does the novel prove its case? Because:" oninput="as(0)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="satq">
+      <div class="sqh"><span>🎯</span><span class="sqt">SAT-Style Question · The Great Gatsby</span></div>
+      <div class="sq">Nick's final line — "So we beat on, boats against the current, borne back ceaselessly into the past" — primarily functions to:</div>
+      <div class="choices" id="sq-0">
+        <div class="ch" onclick="sel(0,0,this)"><div class="cltr">A</div><div class="ctxt">Suggest that Nick intends to return to the Midwest and abandon his dreams of success</div></div>
+        <div class="ch" onclick="sel(0,1,this)"><div class="cltr">B</div><div class="ctxt">Extend the novel's central metaphor to suggest that all human striving is doomed by our inability to escape the past</div></div>
+        <div class="ch" onclick="sel(0,2,this)"><div class="cltr">C</div><div class="ctxt">Imply that Gatsby was right to pursue Daisy despite the tragic outcome</div></div>
+        <div class="ch" onclick="sel(0,3,this)"><div class="cltr">D</div><div class="ctxt">Criticize the carelessness of Tom and Daisy specifically for their treatment of Gatsby</div></div>
+      </div>
+      <button class="chkbtn" onclick="chk(0,1)">Check Answer</button>
+      <div class="sfb" id="sfb-0"></div>
+    </div>
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="ptip" style="margin-left:0;margin-bottom:10px">Fitzgerald's prose is dense with precise, elevated vocabulary. For each word: record its part of speech, define it in your own words, and write it in a sentence. The SAT tests words in context — learn them from the page, not flashcards.</div>
+      <div class="vcards" id="vc-0"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-0" placeholder="e.g. supercilious" onkeydown="if(event.key==='Enter')addV(0)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-0" placeholder="adj / n / v / adv"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(0)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition (your words)</label><input class="vinp" id="vd-0" placeholder="What it means..."></div>
+          <div class="vig"><label>Original sentence</label><input class="vinp" id="vs-0" placeholder="Use it in a sentence..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote from the text:</div><textarea class="qta" id="t0-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(0)" rows="2"></textarea></div>
+      <textarea class="jta" id="t0-wy" placeholder="Device used → effect on the reader → what it contributes to Fitzgerald's argument..." oninput="as(0)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-0">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(0)">Clear</button><button class="savebtn" onclick="save(0)">Save Journal</button></div></div>
+  <div class="pgnum">Page 1 of 5</div>
+</div>
+
+<!-- ══════════════════════════════════
+     BOOK 2: THE CRUCIBLE
+══════════════════════════════════ -->
+<div class="panel" id="p-1">
+  <div class="bh">
+    <div><h2>The Crucible</h2><div class="auth">Arthur Miller · 1953 · Required</div></div>
+    <span class="badge" style="background:#FFF0E8;color:#8B3A1A;">Drama · Allegory · Power</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Allegory</span><span class="chip">Rhetorical Purpose</span><span class="chip">Argument</span><span class="chip">Character Motivation</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(1,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(1,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(1,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-1"><span class="star" onclick="setR(1,1)">★</span><span class="star" onclick="setR(1,2)">★</span><span class="star" onclick="setR(1,3)">★</span><span class="star" onclick="setR(1,4)">★</span><span class="star" onclick="setR(1,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔥</span><span class="plbl">Prompt 1 · Historical Allegory</span><span class="stag">SAT: Analysis</span></div>
+      <div class="pq">Miller wrote The Crucible during the McCarthy era as a direct allegory. Identify three specific parallels between the Salem witch trials in the play and McCarthyism in 1950s America. For each: describe the Salem situation, its McCarthyism parallel, and what Miller is arguing about political power and fear.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT asks you to analyze how an author uses historical or contemporary context to develop meaning. Allegory is the literary version of this — same analytical move.</div>
+      <textarea class="jta" id="t1-p1" placeholder="Parallel 1: Salem: ___ | McCarthy: ___ | Miller argues: | Parallel 2: | Parallel 3:" oninput="as(1)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="ph" style="margin-bottom:6px"><span class="pico">📌</span><span class="plbl">Cite the Text</span><span class="stag">SAT: Evidence</span></div>
+    <div class="ptip" style="margin-left:0;margin-bottom:10px">Find the line where Miller most directly states or implies his argument about how societies manufacture enemies during times of fear. This should be a line a reader could quote to prove Miller's political purpose.</div>
+    <div class="evbox"><div class="evlbl">Miller's argument in a single line:</div><textarea class="qta" id="t1-ev" placeholder="&ldquo; ...&rdquo; (Act __)" oninput="as(1)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">⚖️</span><span class="plbl">Prompt 2 · Motivation & Moral Courage</span><span class="stag">SAT: Character Analysis</span></div>
+      <div class="pq">John Proctor's final decision — to be hanged rather than sign a false confession — is the moral center of the play. What is his reasoning? Write his internal argument as he would make it. Then evaluate: is it a rational choice, an emotional one, or both? Use two lines from the play as evidence.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Understanding a character's motivation and evaluating the reasoning behind a decision is a direct SAT character-analysis skill. Always ask: what does the character believe, and is that belief logically supported?</div>
+      <textarea class="jta" id="t1-p2" placeholder="Proctor's internal argument: | Evidence 1: &ldquo;...&rdquo; | Evidence 2: | Rational or emotional — because:" oninput="as(1)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">📰</span><span class="plbl">Prompt 3 · Drama vs. Prose Comparison</span><span class="stag">SAT: Text Type</span></div>
+      <div class="pq">The SAT includes both prose and drama excerpts. Identify one technique unique to drama (stage directions, dialogue, acts/scenes) that Miller uses to develop meaning in The Crucible. Quote or describe the moment, name what the technique does, and explain what would be lost if this were a novel instead.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT tests genre awareness — how the form of a text shapes its meaning. Drama's tools (stage directions, physical staging) are different from prose's tools (narration, description).</div>
+      <textarea class="jta" id="t1-p3" placeholder="Drama technique: | Moment: | Effect: | What a novel couldn't do:" oninput="as(1)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="satq">
+      <div class="sqh"><span>🎯</span><span class="sqt">SAT-Style Question · The Crucible</span></div>
+      <div class="sq">Miller's stage direction notes in the published script include historical commentary and authorial interpretation. This technique primarily serves to:</div>
+      <div class="choices" id="sq-1">
+        <div class="ch" onclick="sel(1,0,this)"><div class="cltr">A</div><div class="ctxt">Compensate for Miller's lack of confidence in his dialogue to convey meaning independently</div></div>
+        <div class="ch" onclick="sel(1,1,this)"><div class="cltr">B</div><div class="ctxt">Transform the reading version into a layered historical argument, allowing Miller to explicitly guide the reader's interpretation of events</div></div>
+        <div class="ch" onclick="sel(1,2,this)"><div class="cltr">C</div><div class="ctxt">Demonstrate Miller's academic background as a historian of the colonial period</div></div>
+        <div class="ch" onclick="sel(1,3,this)"><div class="cltr">D</div><div class="ctxt">Provide theatrical cues for directors that would otherwise be impossible to infer from the dialogue alone</div></div>
+      </div>
+      <button class="chkbtn" onclick="chk(1,1)">Check Answer</button>
+      <div class="sfb" id="sfb-1"></div>
+    </div>
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-1"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-1" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(1)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-1" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(1)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-1" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-1" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t1-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(1)" rows="2"></textarea></div>
+      <textarea class="jta" id="t1-wy" placeholder="Device → effect → contribution to Miller's argument..." oninput="as(1)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-1">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(1)">Clear</button><button class="savebtn" onclick="save(1)">Save Journal</button></div></div>
+  <div class="pgnum">Page 2 of 5</div>
+</div>
+
+<!-- ══════════════════════════════════
+     BOOK 3A: INVISIBLE MAN
+══════════════════════════════════ -->
+<div class="panel" id="p-2">
+  <div class="bh">
+    <div><h2>Invisible Man</h2><div class="auth">Ralph Ellison · 1952 · Choice 3A</div></div>
+    <span class="badge" style="background:#EEF3FA;color:#1E3A5C;">Identity · Race · America</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">First-Person Narration</span><span class="chip">Symbolism</span><span class="chip">Satire</span><span class="chip">Complex Inference</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(2,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(2,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(2,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-2"><span class="star" onclick="setR(2,1)">★</span><span class="star" onclick="setR(2,2)">★</span><span class="star" onclick="setR(2,3)">★</span><span class="star" onclick="setR(2,4)">★</span><span class="star" onclick="setR(2,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">👁️</span><span class="plbl">Prompt 1 · Prologue Analysis</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="pq">The prologue begins: "I am an invisible man." Ellison immediately complicates this — the narrator is not literally invisible. Analyze the first three paragraphs of the prologue as if it were a SAT passage: What is the narrator's central claim? What evidence does he offer? What effect does Ellison create by opening this way?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Opening paragraph analysis is a guaranteed SAT question. The author always makes deliberate choices about how to begin — your job is to explain why those choices matter.</div>
+      <textarea class="jta" id="t2-p1" placeholder="Narrator's claim: | His evidence: | Effect of this opening: | Why Ellison chose this beginning:" oninput="as(2)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="ph" style="margin-bottom:6px"><span class="pico">📌</span><span class="plbl">Cite the Text</span><span class="stag">SAT: Evidence</span></div>
+    <div class="ptip" style="margin-left:0;margin-bottom:10px">Select the quote that best captures what "invisibility" really means in this novel — not physical, but social and psychological. This quote should be one you could use to prove Ellison's argument about race and recognition in America.</div>
+    <div class="evbox"><div class="evlbl">Defining the invisibility quote:</div><textarea class="qta" id="t2-ev" placeholder="&ldquo; ...&rdquo; (Ch. __)" oninput="as(2)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🎭</span><span class="plbl">Prompt 2 · Satire & Irony</span><span class="stag">SAT: Figurative Language</span></div>
+      <div class="pq">Ellison uses biting satire throughout — the Battle Royal, the Brotherhood, the college. Choose one satirical scene. Describe what it literally depicts, what institution or idea it is satirizing, and how Ellison uses irony to make his critique more powerful than a direct argument would be.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Irony and satire questions appear on the SAT. Key move: what does the text say vs. what does it mean? The gap between the two is where the meaning lives.</div>
+      <textarea class="jta" id="t2-p2" placeholder="Scene: | Literal depiction: | What it satirizes: | How irony makes it sharper than direct argument:" oninput="as(2)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔦</span><span class="plbl">Prompt 3 · The Ending: Ambiguity as Argument</span><span class="stag">SAT: Interpretation</span></div>
+      <div class="pq">The narrator retreats underground at the end, saying he plans to emerge. Is this resolution hopeful, despairing, or deliberately unresolved? Write two interpretations of the ending — one that reads it as hopeful, one as tragic. Then argue which Ellison intends and why, citing evidence.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Ambiguous endings are a staple of SAT literary passages. You must hold two possible interpretations simultaneously and then argue for one — exactly what this prompt asks.</div>
+      <textarea class="jta" id="t2-p3" placeholder="Hopeful reading: | Tragic reading: | My argument for which Ellison intends: because &ldquo;...&rdquo;" oninput="as(2)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="satq">
+      <div class="sqh"><span>🎯</span><span class="sqt">SAT-Style Question · Invisible Man</span></div>
+      <div class="sq">The narrator's decision to remain nameless throughout the novel most likely serves to:</div>
+      <div class="choices" id="sq-2">
+        <div class="ch" onclick="sel(2,0,this)"><div class="cltr">A</div><div class="ctxt">Create suspense by withholding the narrator's identity until the final chapter</div></div>
+        <div class="ch" onclick="sel(2,1,this)"><div class="cltr">B</div><div class="ctxt">Suggest that American society has denied him a recognized identity, making him a representative figure rather than an individual</div></div>
+        <div class="ch" onclick="sel(2,2,this)"><div class="cltr">C</div><div class="ctxt">Indicate that the narrator has not yet decided what kind of person he wants to become</div></div>
+        <div class="ch" onclick="sel(2,3,this)"><div class="cltr">D</div><div class="ctxt">Allow Ellison to draw from his own biography without making the connection explicit</div></div>
+      </div>
+      <button class="chkbtn" onclick="chk(2,1)">Check Answer</button>
+      <div class="sfb" id="sfb-2"></div>
+    </div>
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-2"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-2" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(2)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-2" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(2)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-2" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-2" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t2-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(2)" rows="2"></textarea></div>
+      <textarea class="jta" id="t2-wy" placeholder="Device → effect → contribution to Ellison's argument..." oninput="as(2)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-2">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(2)">Clear</button><button class="savebtn" onclick="save(2)">Save Journal</button></div></div>
+  <div class="pgnum">Page 3 of 5</div>
+</div>
+
+<!-- ══════════════════════════════════
+     BOOK 3B: THE HANDMAID'S TALE
+══════════════════════════════════ -->
+<div class="panel" id="p-3">
+  <div class="bh">
+    <div><h2>The Handmaid's Tale</h2><div class="auth">Margaret Atwood · 1985 · Choice 3B</div></div>
+    <span class="badge" style="background:#FEF0F0;color:#8B2020;">Dystopia · Gender · Power</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Dystopia Structure</span><span class="chip">Narrative Reliability</span><span class="chip">Inference</span><span class="chip">Author's Purpose</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(3,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(3,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(3,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-3"><span class="star" onclick="setR(3,1)">★</span><span class="star" onclick="setR(3,2)">★</span><span class="star" onclick="setR(3,3)">★</span><span class="star" onclick="setR(3,4)">★</span><span class="star" onclick="setR(3,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔴</span><span class="plbl">Prompt 1 · Atwood's Claim: Nothing New</span><span class="stag">SAT: Argument</span></div>
+      <div class="pq">Atwood has said that every event in The Handmaid's Tale has a historical precedent — she invented nothing. Choose three specific elements of Gilead and research or identify their real-world parallels. How does knowing this affect your reading of the novel as argument rather than fantasy?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Evaluating an author's central claim and the evidence they use to support it is core SAT work. Here, the claim is embedded in the world-building itself.</div>
+      <textarea class="jta" id="t3-p1" placeholder="Element 1: Gilead's ___ → Historical parallel: | Element 2: | Element 3: | How this changes the reading:" oninput="as(3)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="ph" style="margin-bottom:6px"><span class="pico">📌</span><span class="plbl">Cite the Text</span><span class="stag">SAT: Evidence</span></div>
+    <div class="ptip" style="margin-left:0;margin-bottom:10px">Select the quote where Offred most powerfully resists — not physically, but in her mind or narration. This resistance is where Atwood's argument about the indestructibility of inner freedom lives.</div>
+    <div class="evbox"><div class="evlbl">Offred's most powerful act of inner resistance:</div><textarea class="qta" id="t3-ev" placeholder="&ldquo; ...&rdquo;" oninput="as(3)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">📜</span><span class="plbl">Prompt 2 · The Historical Notes as Frame</span><span class="stag">SAT: Structure</span></div>
+      <div class="pq">The novel ends with "Historical Notes" — a future academic's analysis of Offred's tapes. How does this frame change the meaning of everything before it? What does it reveal about how history is recorded, who records it, and what gets lost? How does structure itself become an argument here?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Frame structure questions — "what does the author achieve by beginning/ending this way?" — are a high-value SAT question type. The structure is always part of the argument.</div>
+      <textarea class="jta" id="t3-p2" placeholder="What the Notes reveal: | What gets lost in historical record: | How structure becomes argument:" oninput="as(3)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🧵</span><span class="plbl">Prompt 3 · Language as Control</span><span class="stag">SAT: Language</span></div>
+      <div class="pq">Gilead controls language — names, titles, forbidden words, approved phrases. Choose two examples of Atwood's language control (Handmaid names, Salvaging, "Blessed be the fruit," etc.). For each: what does the real meaning of the language do to the speaker and listener? What is Atwood arguing about the relationship between language and power?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT Writing section tests your understanding that word choice is a power decision. Atwood makes this argument visible — studying her deepens your language instincts.</div>
+      <textarea class="jta" id="t3-p3" placeholder="Language example 1: ___ | Effect on speaker: | Effect on listener: | Language example 2: | Atwood's argument:" oninput="as(3)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="satq">
+      <div class="sqh"><span>🎯</span><span class="sqt">SAT-Style Question · The Handmaid's Tale</span></div>
+      <div class="sq">Offred frequently acknowledges that her story may be incomplete or inaccurate, saying "This is a reconstruction. All of it is a reconstruction." This technique primarily serves to:</div>
+      <div class="choices" id="sq-3">
+        <div class="ch" onclick="sel(3,0,this)"><div class="cltr">A</div><div class="ctxt">Undermine the reader's trust in Offred as a narrator and suggest that Gilead may not be as oppressive as she claims</div></div>
+        <div class="ch" onclick="sel(3,1,this)"><div class="cltr">B</div><div class="ctxt">Acknowledge the constructed nature of all testimony and memory while reinforcing the authenticity of lived experience under oppression</div></div>
+        <div class="ch" onclick="sel(3,2,this)"><div class="cltr">C</div><div class="ctxt">Signal to the reader that they should verify Offred's account against the Historical Notes at the end</div></div>
+        <div class="ch" onclick="sel(3,3,this)"><div class="cltr">D</div><div class="ctxt">Demonstrate that women in Gilead have been so thoroughly conditioned that they can no longer accurately perceive their own experiences</div></div>
+      </div>
+      <button class="chkbtn" onclick="chk(3,1)">Check Answer</button>
+      <div class="sfb" id="sfb-3"></div>
+    </div>
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-3"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-3" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(3)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-3" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(3)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-3" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-3" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t3-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(3)" rows="2"></textarea></div>
+      <textarea class="jta" id="t3-wy" placeholder="Device → effect → contribution to Atwood's argument..." oninput="as(3)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-3">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(3)">Clear</button><button class="savebtn" onclick="save(3)">Save Journal</button></div></div>
+  <div class="pgnum">Page 4 of 5</div>
+</div>
+
+<!-- ══════════════════════════════════
+     INDEPENDENT READING
+══════════════════════════════════ -->
+<div class="panel" id="p-4">
+  <div class="bh">
+    <div><h2 id="itd">Independent Reading</h2><div class="auth" id="ita">Between the World and Me · Beloved · or your approved title</div></div>
+    <span class="badge" style="background:#F5F5F0;color:#3A4A3C;">My Choice</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Full Synthesis</span><span class="chip">Essay Writing</span><span class="chip">All Reading Skills</span><span class="chip">Argument</span></div>
+  <div class="srow" style="flex-wrap:wrap;gap:10px">
+    <span class="slbl">My Book:</span>
+    <input style="background:transparent;border:none;border-bottom:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--ink);outline:none;width:210px" id="iT" placeholder="Title..." oninput="updI()">
+    <input style="background:transparent;border:none;border-bottom:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#8A7A68;outline:none;width:160px" id="iA" placeholder="Author..." oninput="updI()">
+  </div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🎯</span><span class="plbl">Prompt 1 · Central Claim + 3-Point Evidence</span><span class="stag">SAT: Evidence</span></div>
+      <div class="pq">State your book's central argument in one sentence. Then build three-point support: for each piece of evidence, copy the exact quote, then write one sentence explaining the connection to your claim. This is CEE — the core SAT analytical writing structure.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Claim → Evidence → Explanation (CEE) is the single most important writing pattern for the SAT. Mastering it here means you can apply it anywhere.</div>
+      <textarea class="jta" id="t4-p1" placeholder="Central claim: | E1: &ldquo;...&rdquo; → Because: | E2: → Because: | E3: → Because:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔗</span><span class="plbl">Prompt 2 · Synthesis: Your Book + American Literature</span><span class="stag">SAT: Synthesis</span></div>
+      <div class="pq">Synthesize your independent book with one of the required texts. What shared theme connects them? Find a quote from each that speaks to that theme — then identify the most important difference in how each author handles it. Which author's approach is more persuasive, and why?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Paired-passage synthesis — comparing how two authors develop a shared idea — is the highest-difficulty SAT Reading question. This prompt is direct preparation.</div>
+      <textarea class="jta" id="t4-p2" placeholder="Shared theme: | My book: &ldquo;...&rdquo; | Required text: &ldquo;...&rdquo; | Key difference: | More persuasive: because:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🖊️</span><span class="plbl">Prompt 3 · Full SAT Practice Essay (3 Paragraphs)</span><span class="stag">SAT: Essay</span></div>
+      <div class="pq">Write a complete 3-paragraph analytical essay about your book. ¶1: Introduce the book, state a specific analytical thesis (not just a topic). ¶2: Develop your thesis with a direct quote and a full CEE explanation. ¶3: Address significance — what does this theme reveal about the human experience beyond this specific book? Target: 250–300 words. Precision over length.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> This is a full SAT-style analytical essay. The key: specificity in your thesis, direct evidence, and a "so what" conclusion that shows you understand the text's larger significance.</div>
+      <textarea class="jta" id="t4-p3" placeholder="¶1 (Introduction + thesis): | ¶2 (Evidence + analysis): | ¶3 (Significance / so what):" oninput="as(4)" rows="9"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-4"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(4)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(4)" rows="2"></textarea></div>
+      <textarea class="jta" id="t4-wy" placeholder="Device → effect → contribution to the author's argument..." oninput="as(4)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
+  <div class="pgnum">Page 5 of 5</div>
+</div>
+
+</div><!-- /journal -->
+
+<script>
+const KEY='j11_sat_v1';
+let D={};
+const ANS=[1,1,1,1];
+const EXP=[
+  "Correct — B. The closing metaphor universalizes the novel's critique: all human beings are caught in the current of time, unable to escape the past, striving toward a future that recedes like the green light. This is SAT-level thematic synthesis.",
+  "Correct — B. Miller's stage directions transform the play into a hybrid historical argument. As a reader (not a theatergoer), you get Miller's direct editorial voice alongside the drama — a unique rhetorical strategy.",
+  "Correct — B. By withholding a name, Ellison makes his narrator both a specific person and a representative of everyone denied recognition by American society. The namelessness is itself the argument about invisibility.",
+  "Correct — B. Offred's acknowledgment that her account is a reconstruction is not a weakness — it's Atwood's argument that all testimony is partial, constructed, and shaped by memory. It makes Offred's account feel more, not less, authentic."
+];
+const WEXP=[
+  "Not quite. The final lines are universal, not specific to Nick's biography. Fitzgerald uses the boat/current metaphor to make a claim about all human longing — the inability to escape the pull of the past. Look for the answer that captures this breadth.",
+  "Not quite. The stage directions are a deliberate choice by a skilled writer. They turn the reading experience into a different kind of engagement than watching the play — the reader gets Miller's explicit interpretation alongside the drama.",
+  "Not quite. The namelessness is not about the character's unresolved identity or biography — it's a structural argument about how American society refuses to grant full personhood and recognition to Black Americans.",
+  "Not quite. Offred's admissions of uncertainty don't undermine her account — they make it more credible. Atwood is arguing that partial, reconstructed testimony is the most honest kind, especially under oppression. Look for nuance."
+];
+let sel_=[-1,-1,-1,-1],chked=[false,false,false,false];
+
+function sel(q,c,el){if(chked[q])return;sel_[q]=c;document.querySelectorAll(`#sq-${q} .ch`).forEach(x=>x.classList.remove('selected'));el.classList.add('selected');}
+function chk(q,correct){
+  if(chked[q]||sel_[q]===-1)return;chked[q]=true;
+  document.querySelectorAll(`#sq-${q} .ch`).forEach((c,i)=>{if(i===correct)c.classList.add('correct');else if(i===sel_[q])c.classList.add('wrong');});
+  const ok=sel_[q]===correct;
+  const fb=document.getElementById(`sfb-${q}`);
+  fb.textContent=(ok?'✓ ':'')+( ok?EXP[q]:WEXP[q]);fb.className='sfb show '+(ok?'ok':'no');
+  if(!D.satQ)D.satQ={};D.satQ[q]={s:sel_[q],ok};updScore();persist();
+}
+function updScore(){const k=Object.keys(D.satQ||{}).length,ok=Object.values(D.satQ||{}).filter(x=>x.ok).length;document.getElementById('scnt').textContent=k?Math.round(ok/k*100)+'%':'0%';}
+function addV(i){
+  const w=document.getElementById(`vw-${i}`).value.trim();if(!w)return;
+  const p=document.getElementById(`vp-${i}`).value.trim(),d=document.getElementById(`vd-${i}`).value.trim(),s=document.getElementById(`vs-${i}`).value.trim();
+  if(!D['b'+i])D['b'+i]={};if(!D['b'+i].v)D['b'+i].v=[];
+  D['b'+i].v.push({w,p,d,s});['vw','vp','vd','vs'].forEach(id=>document.getElementById(`${id}-${i}`).value='');
+  rvoc(i);updVc();persist();
+}
+function rmV(i,j){D['b'+i].v.splice(j,1);rvoc(i);updVc();persist();}
+function rvoc(i){
+  const el=document.getElementById(`vc-${i}`);
+  const vs=(D['b'+i]||{}).v||[];
+  el.innerHTML=vs.map((v,j)=>`<div class="vc"><div><div class="vw">${v.w}</div><div class="vps">${v.p||''}</div><div class="vd">${v.d||'<em style="color:#bbb">No definition yet</em>'}</div>${v.s?`<div class="vs2">"${v.s}"</div>`:''}</div><button class="vdel" onclick="rmV(${i},${j})">×</button></div>`).join('');
+}
+function updVc(){let t=0;for(let i=0;i<5;i++)t+=((D['b'+i]||{}).v||[]).length;document.getElementById('vcnt').textContent=t;}
+function setSt(i,s,btn){
+  if(!D['b'+i])D['b'+i]={};D['b'+i].s=s;
+  document.querySelectorAll(`#p-${i} .sbtn`).forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  const t=document.getElementById(`tab-${i}`);if(s==='Finished')t.classList.add('done');else t.classList.remove('done');
+  updProg();persist();
+}
+function setR(i,v){if(!D['b'+i])D['b'+i]={};D['b'+i].r=v;document.querySelectorAll(`#stars-${i} .star`).forEach((s,j)=>s.classList.toggle('lit',j<v));persist();}
+function updProg(){let done=0;for(let i=0;i<5;i++)if((D['b'+i]||{}).s==='Finished')done++;const pct=Math.round(done/5*100);document.getElementById('pFill').style.width=pct+'%';document.getElementById('pPct').textContent=pct+'%';document.getElementById('bcnt').textContent=done+'/5';}
+function sw(n,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.getElementById(`p-${n}`).classList.add('active');btn.classList.add('active');}
+function updI(){document.getElementById('itd').textContent=document.getElementById('iT').value||'Independent Reading';document.getElementById('ita').textContent=document.getElementById('iA').value||'Between the World and Me · Beloved · or your approved title';}
+function as(i){save(i,true);}
+function save(i,silent=false){
+  if(!D['b'+i])D['b'+i]={};
+  ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)D['b'+i][k]=el.value;});
+  if(i===4){D['b4'].iT=document.getElementById('iT').value;D['b4'].iA=document.getElementById('iA').value;}
+  persist();if(!silent){const el=document.getElementById(`sv-${i}`);el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
+}
+function clr(i){if(!confirm('Clear all entries for this book?'))return;const keep={s:D['b'+i]?.s,r:D['b'+i]?.r,v:[]};D['b'+i]=keep;['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)el.value='';});rvoc(i);updVc();persist();}
+function saveMeta(){['sN','sSc','sYr'].forEach(id=>{D[id]=document.getElementById(id).value;});persist();}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){}}
+
+function exportTxt(){
+  const name=D.sN||'Student';
+  let out=`11TH GRADE SUMMER READING JOURNAL — SAT EDITION\nStudent: ${name} | School: ${D.sSc||''} | Summer: ${D.sYr||'2026'}\n${'='.repeat(60)}\n\n`;
+  const books=['The Great Gatsby','The Crucible','Invisible Man','The Handmaid\'s Tale','Independent Reading'];
+  for(let i=0;i<5;i++){
+    const b=D['b'+i]||{};
+    out+=`BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
+    if(b.p1)out+=`\nPROMPT 1:\n${b.p1}\n`;
+    if(b.ev)out+=`\nCITE THE TEXT:\n${b.ev}\n`;
+    if(b.p2)out+=`\nPROMPT 2:\n${b.p2}\n`;
+    if(b.p3)out+=`\nPROMPT 3:\n${b.p3}\n`;
+    if(b.qt)out+=`\nFAVORITE PASSAGE:\n${b.qt}\n`;
+    if(b.wy)out+=`\nANALYSIS:\n${b.wy}\n`;
+    if((b.v||[]).length){out+=`\nVOCABULARY WORDS:\n`;b.v.forEach(v=>{out+=`  • ${v.w} (${v.p||''}): ${v.d||''} — "${v.s||''}"\n`;});}
+    out+=`\n${'='.repeat(60)}\n\n`;
+  }
+  const blob=new Blob([out],{type:'text/plain'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${name.replace(/\s+/g,'_')}_11th_Reading_Journal.txt`;a.click();
+}
+
+function load(){
+  try{D=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){D={};}
+  ['sN','sSc','sYr'].forEach(id=>{if(D[id])document.getElementById(id).value=D[id];});
+  for(let i=0;i<5;i++){
+    const b=D['b'+i]||{};
+    ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el&&b[k])el.value=b[k];});
+    if(b.v)rvoc(i);
+    if(b.s){document.querySelectorAll(`#p-${i} .sbtn`).forEach(btn=>{if(btn.textContent.trim().replace('✓ ','')===b.s||btn.textContent.trim()===b.s)btn.classList.add('on');});if(b.s==='Finished')document.getElementById(`tab-${i}`).classList.add('done');}
+    if(b.r)document.querySelectorAll(`#stars-${i} .star`).forEach((s,j)=>s.classList.toggle('lit',j<b.r));
+    if(i===4){if(b.iT){document.getElementById('iT').value=b.iT;updI();}if(b.iA){document.getElementById('iA').value=b.iA;updI();}}
+  }
+  if(D.satQ){Object.entries(D.satQ).forEach(([q,v])=>{
+    sel_[q]=v.s;chked[q]=true;
+    document.querySelectorAll(`#sq-${q} .ch`).forEach((c,i)=>{if(i===ANS[q])c.classList.add('correct');else if(i===v.s)c.classList.add('wrong');});
+    const fb=document.getElementById(`sfb-${q}`);fb.textContent=(v.ok?'✓ ':'')+( v.ok?EXP[q]:WEXP[q]);fb.className='sfb show '+(v.ok?'ok':'no');
+  });}
+  updVc();updProg();updScore();
+}
+load();
+</script>
+
+<script>
+(function(){
+  var path = window.location.pathname.split('/').pop().replace('.html','');
+  var map = {
+    'index':'index','':'index',
+    'summer-reading':'summer-reading',
+    '9th-grade-reading-journal-SAT':'9th',
+    '10th-grade-reading-journal-SAT':'10th',
+    '11th-grade-reading-journal-SAT':'11th',
+    '12th-grade-reading-journal-SAT':'12th'
+  };
+  var key = map[path] || path;
+  var el = document.querySelector('.nav-link[data-page="'+key+'"]');
+  if(el) el.classList.add('active');
+  // close mobile nav on link click
+  document.querySelectorAll('.nav-link').forEach(function(l){
+    l.addEventListener('click',function(){
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
