@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Reading List</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --ink: #1A1410;
+    --rust: #C4622D;
+    --gold: #D4A853;
+    --sage: #6B8F71;
+    --navy: #1E3A5F;
+    --blush: #E8C5A0;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid #D4C9B8;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+    opacity: 0.18;
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 80px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--ink);
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .header-sub {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #6B6055;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  /* ── GRADE TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #D4C9B8;
+    padding: 0 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 18px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #9C8E80;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover { color: var(--ink); }
+
+  .tab-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--rust);
+  }
+
+  /* ── GRADE PANELS ── */
+  .grade-panel { display: none; padding: 48px 40px 64px; }
+  .grade-panel.active { display: block; animation: fadeUp 0.35s ease; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .grade-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E2D9CC;
+  }
+
+  .grade-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--blush);
+    opacity: 0.7;
+  }
+
+  .grade-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .grade-info p {
+    font-size: 13px;
+    color: #7A6E65;
+    max-width: 420px;
+    line-height: 1.6;
+  }
+
+  /* ── BOOK GRID ── */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .book-card {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    padding: 28px 26px;
+    border: 1px solid #E8DFD4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+
+  .book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(26,20,16,0.08);
+  }
+
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--accent, var(--rust));
+  }
+
+  .book-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--accent, var(--rust));
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .book-author {
+    font-size: 12px;
+    color: #9C8E80;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+
+  .book-note {
+    font-size: 13px;
+    color: #5C5249;
+    line-height: 1.65;
+  }
+
+  .book-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: color-mix(in srgb, var(--accent, var(--rust)) 12%, transparent);
+    color: var(--accent, var(--rust));
+  }
+
+  /* ── READING TIPS ── */
+  .tips-box {
+    background: linear-gradient(135deg, var(--ink) 0%, #2C2218 100%);
+    border-radius: 6px;
+    padding: 32px 36px;
+    color: var(--cream);
+  }
+
+  .tips-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+
+  .tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+  }
+
+  .tips-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+    color: #C8BFB5;
+  }
+
+  .tips-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 11px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px;
+    color: #B0A090;
+    letter-spacing: 0.1em;
+    border-top: 1px solid #E2D9CC;
+  }
+
+  @media (max-width: 600px) {
+    header, .tabs, .grade-panel { padding-left: 20px; padding-right: 20px; }
+    .tab-btn { padding: 14px 16px; font-size: 12px; }
+    .grade-number { font-size: 52px; }
+    .books-grid { grid-template-columns: 1fr; }
+  }
+
+/* ── SHARED NAV ── */
+.site-nav{
+  position:sticky;top:0;z-index:9999;
+  background:rgba(20,18,12,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,.18);
+  padding:0 5vw;
+  display:flex;align-items:center;
+  height:52px;gap:0;
+}
+.nav-brand{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:15px;font-weight:700;font-style:italic;
+  color:#F7F3EC;text-decoration:none;
+  margin-right:28px;white-space:nowrap;
+  flex-shrink:0;
+}
+.nav-brand span{color:#C9943A}
+.nav-links{
+  display:flex;align-items:center;gap:2px;
+  overflow-x:auto;scrollbar-width:none;flex:1;
+}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{
+  font-family:'DM Mono','Courier New',monospace;
+  font-size:9px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(247,243,236,.45);
+  text-decoration:none;
+  padding:6px 12px;border-radius:3px;
+  white-space:nowrap;transition:all .2s;
+  border:1px solid transparent;
+}
+.nav-link:hover{color:#F7F3EC;background:rgba(255,255,255,.06);}
+.nav-link.active{
+  color:#C9943A;
+  border-color:rgba(201,168,76,.3);
+  background:rgba(201,168,76,.08);
+}
+.nav-burger{
+  display:none;background:none;border:none;cursor:pointer;
+  color:rgba(247,243,236,.6);font-size:18px;margin-left:auto;padding:4px;
+}
+@media(max-width:700px){
+  .site-nav{padding:0 16px}
+  .nav-links{display:none;position:absolute;top:52px;left:0;right:0;
+    background:rgba(14,12,8,.98);flex-direction:column;align-items:stretch;
+    padding:8px 16px 16px;border-bottom:1px solid rgba(201,168,76,.15);gap:2px;}
+  .nav-links.open{display:flex}
+  .nav-link{padding:10px 12px;font-size:10px}
+  .nav-burger{display:block}
+}
+
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">Summer <span>Reading</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link" data-page="index">🏠 Home</a>
+    <a href="summer-reading.html" class="nav-link" data-page="summer-reading">📚 Book List</a>
+    <a href="9th-grade-reading-journal-SAT.html" class="nav-link" data-page="9th">9th Journal</a>
+    <a href="10th-grade-reading-journal-SAT.html" class="nav-link" data-page="10th">10th Journal</a>
+    <a href="11th-grade-reading-journal-SAT.html" class="nav-link" data-page="11th">11th Journal</a>
+    <a href="12th-grade-reading-journal-SAT.html" class="nav-link" data-page="12th">12th Journal</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</nav>
+
+
+<header>
+  <div class="header-eyebrow">Class of 2026–2027</div>
+  <h1>Summer<br><em>Reading</em></h1>
+  <p class="header-sub">Curated reading lists for each high school grade — books chosen to challenge, inspire, and stay with you long after the last page.</p>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" onclick="showGrade(9, this)">9th Grade</button>
+  <button class="tab-btn" onclick="showGrade(10, this)">10th Grade</button>
+  <button class="tab-btn" onclick="showGrade(11, this)">11th Grade</button>
+  <button class="tab-btn" onclick="showGrade(12, this)">12th Grade</button>
+</nav>
+
+<!-- 9TH GRADE -->
+<section id="grade-9" class="grade-panel active">
+  <div class="grade-header">
+    <div class="grade-number">09</div>
+    <div class="grade-info">
+      <h2>Freshman Year</h2>
+      <p>Big ideas, big worlds. These books open the door to literary analysis, moral complexity, and stories that refuse easy answers.</p>
+    </div>
+  </div>
+
+  <div class="books-grid" style="--accent: #C4622D;">
+    <div class="book-card">
+      <div class="book-number">01 / Required</div>
+      <div class="book-title">To Kill a Mockingbird</div>
+      <div class="book-author">Harper Lee</div>
+      <div class="book-note">Scout Finch's Alabama childhood becomes a lens on justice, race, and moral courage. A masterclass in point of view.</div>
+      <span class="book-tag">Classic · Justice</span>
+    </div>
+    <div class="book-card">
+      <div class="book-number">02 / Required</div>
+      <div class="book-title">The Outsiders</div>
+      <div class="book-author">S.E. Hinton</div>
+      <div class="book-note">Class, loyalty, and identity collide in this raw, urgent novel written by a 16-year-old. Deceptively simple, deeply true.</div>
+      <span class="book-tag">Coming of Age</span>
+    </div>
+    <div class="book-card">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">The House on Mango Street</div>
+      <div class="book-author">Sandra Cisneros</div>
+      <div class="book-note">Vignettes of a young Latina girl's world in Chicago. Each chapter is a gem; together they form a mosaic of belonging and longing.</div>
+      <span class="book-tag">Vignette · Identity</span>
+    </div>
+    <div class="book-card">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">Roll of Thunder, Hear My Cry</div>
+      <div class="book-author">Mildred D. Taylor</div>
+      <div class="book-note">The Logan family fights to keep their land and dignity in Depression-era Mississippi. Gripping, historically rich, emotionally lasting.</div>
+      <span class="book-tag">Historical Fiction</span>
+    </div>
+    <div class="book-card">
+      <div class="book-number">04 / Independent</div>
+      <div class="book-title">I Know Why the Caged Bird Sings</div>
+      <div class="book-author">Maya Angelou</div>
+      <div class="book-note">A memoir of extraordinary resilience. Angelou's voice is unlike any other — lyrical, brave, and utterly unforgettable.</div>
+      <span class="book-tag">Memoir · Voice</span>
+    </div>
+    <div class="book-card">
+      <div class="book-number">05 / Independent</div>
+      <div class="book-title">Ender's Game</div>
+      <div class="book-author">Orson Scott Card</div>
+      <div class="book-note">A gifted child is trained to fight an alien war — but nothing is as it seems. Raises deep questions about leadership and manipulation.</div>
+      <span class="book-tag">Sci-Fi · Ethics</span>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <h3>Tips for 9th Graders</h3>
+    <ul class="tips-list">
+      <li>Keep a reading journal — jot one surprising idea per chapter</li>
+      <li>Notice how authors use point of view to control what you know</li>
+      <li>Look up unfamiliar historical context; it deepens everything</li>
+      <li>Don't rush — savor the language, not just the plot</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10TH GRADE -->
+<section id="grade-10" class="grade-panel">
+  <div class="grade-header">
+    <div class="grade-number">10</div>
+    <div class="grade-info">
+      <h2>Sophomore Year</h2>
+      <p>Sharpen your analytical eye. These books reward close reading — symbols, structure, and subtext are waiting on every page.</p>
+    </div>
+  </div>
+
+  <div class="books-grid" style="--accent: #1E3A5F;">
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">01 / Required</div>
+      <div class="book-title">Lord of the Flies</div>
+      <div class="book-author">William Golding</div>
+      <div class="book-note">Stranded boys reveal civilization's thin skin. Rich in allegory and symbolism — every element carries double meaning.</div>
+      <span class="book-tag">Allegory · Human Nature</span>
+    </div>
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">02 / Required</div>
+      <div class="book-title">Of Mice and Men</div>
+      <div class="book-author">John Steinbeck</div>
+      <div class="book-note">A slim, devastating novella about dreams, loneliness, and the mercy of friendship. Every word earns its place.</div>
+      <span class="book-tag">Novella · American Dream</span>
+    </div>
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">Night</div>
+      <div class="book-author">Elie Wiesel</div>
+      <div class="book-note">A Holocaust survivor's witness testimony, stripped to its essence. Unsparing and essential — read slowly, with care.</div>
+      <span class="book-tag">Memoir · Holocaust</span>
+    </div>
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">Their Eyes Were Watching God</div>
+      <div class="book-author">Zora Neale Hurston</div>
+      <div class="book-note">Janie Crawford searches for herself across marriages and storms. Hurston's dialogue in dialect is a revelation — read it aloud.</div>
+      <span class="book-tag">Harlem Renaissance</span>
+    </div>
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">04 / Independent</div>
+      <div class="book-title">Animal Farm</div>
+      <div class="book-author">George Orwell</div>
+      <div class="book-note">The fable is deceptively cheerful; the political satire is razor-sharp. A perfect introduction to allegory and power.</div>
+      <span class="book-tag">Satire · Power</span>
+    </div>
+    <div class="book-card" style="--accent: #1E3A5F;">
+      <div class="book-number">05 / Independent</div>
+      <div class="book-title">The Kite Runner</div>
+      <div class="book-author">Khaled Hosseini</div>
+      <div class="book-note">Guilt, redemption, and Afghanistan's transformation. One of the most emotionally complex first-person narratives in modern fiction.</div>
+      <span class="book-tag">Redemption · History</span>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <h3>Tips for 10th Graders</h3>
+    <ul class="tips-list">
+      <li>Annotate as you read — underline images and patterns</li>
+      <li>Ask: what is this book actually about beneath the surface?</li>
+      <li>Compare authors' styles — how does Golding differ from Steinbeck?</li>
+      <li>Try writing one paragraph of analysis per book</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11TH GRADE -->
+<section id="grade-11" class="grade-panel">
+  <div class="grade-header">
+    <div class="grade-number">11</div>
+    <div class="grade-info">
+      <h2>Junior Year</h2>
+      <p>American literature in focus — and works that speak to power, identity, and the world you're inheriting. College-level reading begins here.</p>
+    </div>
+  </div>
+
+  <div class="books-grid" style="--accent: #6B8F71;">
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">01 / Required</div>
+      <div class="book-title">The Great Gatsby</div>
+      <div class="book-author">F. Scott Fitzgerald</div>
+      <div class="book-note">The American Dream dissected through lavish parties and a green light across the bay. Every sentence is doing three things at once.</div>
+      <span class="book-tag">American Dream · Symbol</span>
+    </div>
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">02 / Required</div>
+      <div class="book-title">The Crucible</div>
+      <div class="book-author">Arthur Miller</div>
+      <div class="book-note">Salem's witch trials as McCarthyism allegory. A drama about fear, conformity, and what we sacrifice to protect our name.</div>
+      <span class="book-tag">Drama · Allegory</span>
+    </div>
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">Invisible Man</div>
+      <div class="book-author">Ralph Ellison</div>
+      <div class="book-note">A nameless Black man navigates a society that refuses to see him. One of the great American novels — ambitious, surreal, essential.</div>
+      <span class="book-tag">Identity · Race</span>
+    </div>
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">The Handmaid's Tale</div>
+      <div class="book-author">Margaret Atwood</div>
+      <div class="book-note">A dystopian society that controls women's bodies and voices. Atwood's worldbuilding is meticulous and disturbingly plausible.</div>
+      <span class="book-tag">Dystopia · Gender</span>
+    </div>
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">04 / Independent</div>
+      <div class="book-title">Between the World and Me</div>
+      <div class="book-author">Ta-Nehisi Coates</div>
+      <div class="book-note">A letter from father to son about being Black in America. Coates writes with ferocity and precision — not an easy read, a necessary one.</div>
+      <span class="book-tag">Nonfiction · Race</span>
+    </div>
+    <div class="book-card" style="--accent: #6B8F71;">
+      <div class="book-number">05 / Independent</div>
+      <div class="book-title">Beloved</div>
+      <div class="book-author">Toni Morrison</div>
+      <div class="book-note">Slavery's ghost haunts a freed woman in post-Civil War Ohio. Morrison's prose is demanding — and among the most beautiful ever written.</div>
+      <span class="book-tag">Literary Fiction · Trauma</span>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <h3>Tips for 11th Graders</h3>
+    <ul class="tips-list">
+      <li>Practice thesis-driven analysis — one claim, three pieces of evidence</li>
+      <li>Read the historical context before you begin each book</li>
+      <li>Start a vocabulary list — SAT words show up in these texts</li>
+      <li>Consider how each author uses structure, not just story</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 12TH GRADE -->
+<section id="grade-12" class="grade-panel">
+  <div class="grade-header">
+    <div class="grade-number">12</div>
+    <div class="grade-info">
+      <h2>Senior Year</h2>
+      <p>World literature, philosophical weight, and books that ask the hardest questions. Read like the thinker you're becoming.</p>
+    </div>
+  </div>
+
+  <div class="books-grid" style="--accent: #9B4F96;">
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">01 / Required</div>
+      <div class="book-title">Hamlet</div>
+      <div class="book-author">William Shakespeare</div>
+      <div class="book-note">The original introspective hero — grief, revenge, inaction, and mortality in five acts. Read it aloud with someone. It transforms.</div>
+      <span class="book-tag">Drama · Philosophy</span>
+    </div>
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">02 / Required</div>
+      <div class="book-title">Crime and Punishment</div>
+      <div class="book-author">Fyodor Dostoevsky</div>
+      <div class="book-note">A murderer's psychological unraveling across 550 pages. Dense but riveting — the portrait of a mind at war with itself.</div>
+      <span class="book-tag">Russian Lit · Psychology</span>
+    </div>
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">Things Fall Apart</div>
+      <div class="book-author">Chinua Achebe</div>
+      <div class="book-note">Colonialism through Igbo eyes. Achebe writes against the Conrad tradition — this is Africa telling its own story. Precise and powerful.</div>
+      <span class="book-tag">Postcolonial · Nigeria</span>
+    </div>
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">03 / Choose One</div>
+      <div class="book-title">One Hundred Years of Solitude</div>
+      <div class="book-author">Gabriel García Márquez</div>
+      <div class="book-note">Seven generations of the Buendía family in Macondo. Magical realism at its most intoxicating — don't fight the rules of this world, enter them.</div>
+      <span class="book-tag">Magical Realism</span>
+    </div>
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">04 / Independent</div>
+      <div class="book-title">The Brothers Karamazov</div>
+      <div class="book-author">Fyodor Dostoevsky</div>
+      <div class="book-note">God, free will, suffering, and family — the big questions in one immense novel. The "Grand Inquisitor" chapter alone justifies the read.</div>
+      <span class="book-tag">Philosophy · Faith</span>
+    </div>
+    <div class="book-card" style="--accent: #9B4F96;">
+      <div class="book-number">05 / Independent</div>
+      <div class="book-title">The Road</div>
+      <div class="book-author">Cormac McCarthy</div>
+      <div class="book-note">A father and son walk through a burned America carrying "the fire." McCarthy's stripped prose and its moral core will stay with you forever.</div>
+      <span class="book-tag">Dystopia · Parenthood</span>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <h3>Tips for 12th Graders</h3>
+    <ul class="tips-list">
+      <li>Connect themes across books — what patterns do you notice?</li>
+      <li>Think about how these books changed you, not just what they said</li>
+      <li>Write your college essays alongside your reading — they feed each other</li>
+      <li>Discuss with someone — these books are meant to be argued about</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  ✦ Summer Reading List &nbsp;·&nbsp; High School Edition &nbsp;·&nbsp; 2026–2027
+</footer>
+
+<script>
+  function showGrade(n, btn) {
+    document.querySelectorAll('.grade-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('grade-' + n).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+<script>
+(function(){
+  var path = window.location.pathname.split('/').pop().replace('.html','');
+  var map = {
+    'index':'index','':'index',
+    'summer-reading':'summer-reading',
+    '9th-grade-reading-journal-SAT':'9th',
+    '10th-grade-reading-journal-SAT':'10th',
+    '11th-grade-reading-journal-SAT':'11th',
+    '12th-grade-reading-journal-SAT':'12th'
+  };
+  var key = map[path] || path;
+  var el = document.querySelector('.nav-link[data-page="'+key+'"]');
+  if(el) el.classList.add('active');
+  // close mobile nav on link click
+  document.querySelectorAll('.nav-link').forEach(function(l){
+    l.addEventListener('click',function(){
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
