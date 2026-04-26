@@ -229,6 +229,24 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
   .nav-burger{display:block}
 }
 
+
+/* ── PRINT ── */
+.print-btn-wrap{width:100%;max-width:800px;display:flex;justify-content:flex-end;padding:10px 0 0;gap:10px}
+.print-btn{background:var(--forest);color:#fff;border:none;padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;text-transform:uppercase}
+.print-btn:hover{background:#1A3D28}
+.export-btn-p{background:transparent;color:var(--forest);border:1.5px solid var(--forest);padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;text-transform:uppercase}
+.export-btn-p:hover{background:rgba(45,90,61,.1)}
+@media print{
+  body{background:#fff;padding:0}
+  .cover{background:#232B23!important;box-shadow:none!important;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .stats-bar,.tabs,.print-btn-wrap,.savebar,.site-nav{display:none!important}
+  .journal{box-shadow:none}
+  .panel{display:block!important;page-break-after:always}
+  .satq{background:#f8f8f8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sfb{display:none!important}
+  .page{background-image:repeating-linear-gradient(transparent,transparent 31px,#ddd 31px,#ddd 32px);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
 </style>
 </head>
 <body>
@@ -773,6 +791,41 @@ function clr(i){
 }
 function saveMeta(){['sName','sSchool','sYear'].forEach(id=>{D[id]=document.getElementById(id).value;});persist();}
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){}}
+
+function exportTxt(){
+  const name = D['sName'] || 'Student';
+  const school = D['sSchool'] || '';
+  const yr = D['sYear'] || '2026';
+  let out = `10TH GRADE SUMMER READING JOURNAL — SAT EDITION\nStudent: ${name} | School: ${school} | Summer: ${yr}\n${'='.repeat(60)}\n\n`;
+  const books = [
+    'Lord of the Flies',
+    'Of Mice and Men',
+    'Night',
+    'Their Eyes Were Watching God',
+    'Independent Reading'
+  ];
+  for (let i = 0; i < 5; i++) {
+    const b = D['b' + i] || {};
+    out += `BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
+    if (b.p1) out += `\nPROMPT 1:\n${b.p1}\n`;
+    if (b.ev) out += `\nCITE THE TEXT:\n${b.ev}\n`;
+    if (b.p2) out += `\nPROMPT 2:\n${b.p2}\n`;
+    if (b.p3) out += `\nPROMPT 3:\n${b.p3}\n`;
+    if (b.qt) out += `\nFAVORITE PASSAGE:\n${b.qt}\n`;
+    if (b.wy) out += `\nANALYSIS:\n${b.wy}\n`;
+    if ((b.v || []).length) {
+      out += `\nVOCABULARY WORDS:\n`;
+      b.v.forEach(v => { out += `  • ${v.w} (${v.p || ''}): ${v.d || ''} — "${v.s || ''}"\n`; });
+    }
+    out += `\n${'='.repeat(60)}\n\n`;
+  }
+  const blob = new Blob([out], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${name.replace(/\s+/g,'_')}_10th_Reading_Journal.txt`;
+  a.click();
+}
+
 function load(){
   try{D=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){D={};}
   ['sName','sSchool','sYear'].forEach(id=>{if(D[id])document.getElementById(id).value=D[id];});

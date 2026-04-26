@@ -359,6 +359,24 @@
   .nav-burger{display:block}
 }
 
+
+/* ── PRINT ── */
+.print-btn-wrap{width:100%;max-width:780px;display:flex;justify-content:flex-end;padding:10px 0 0;gap:10px}
+.print-btn{background:var(--rust);color:#fff;border:none;padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;text-transform:uppercase}
+.print-btn:hover{background:#963E18}
+.export-btn-p{background:transparent;color:var(--rust);border:1.5px solid var(--rust);padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;text-transform:uppercase}
+.export-btn-p:hover{background:rgba(184,92,42,.1)}
+@media print{
+  body{background:#fff;padding:0}
+  .journal-cover{background:#1E3A6A!important;box-shadow:none!important;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sat-tracker,.book-tabs,.print-btn-wrap,.save-bar,.site-nav{display:none!important}
+  .journal-body{box-shadow:none}
+  .book-panel{display:block!important;page-break-after:always}
+  .sat-practice{background:#f8f8f8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sat-feedback{display:none!important}
+  .page-content{background-image:repeating-linear-gradient(transparent,transparent 31px,#ddd 31px,#ddd 32px);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
 </style>
 </head>
 <body>
@@ -1049,6 +1067,42 @@ function updateVocabCount() {
 }
 
 // ── PERSISTENCE ──
+
+function exportTxt(){
+  const name = data['studentName'] || 'Student';
+  const school = data['schoolName'] || '';
+  const yr = data['summerYear'] || '2026';
+  let out = `9TH GRADE SUMMER READING JOURNAL — SAT EDITION\nStudent: ${name} | School: ${school} | Summer: ${yr}\n${'='.repeat(60)}\n\n`;
+  const books = [
+    'To Kill a Mockingbird',
+    'The Outsiders',
+    'The House on Mango Street',
+    'Roll of Thunder, Hear My Cry',
+    'Independent Reading'
+  ];
+  for (let i = 0; i < 5; i++) {
+    const b = data['book' + i] || {};
+    out += `BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
+    if (b.p1) out += `\nPROMPT 1:\n${b.p1}\n`;
+    if (b.evidence) out += `\nCITE THE TEXT:\n${b.evidence}\n`;
+    if (b.p2) out += `\nPROMPT 2:\n${b.p2}\n`;
+    if (b.p3) out += `\nPROMPT 3:\n${b.p3}\n`;
+    if (b.p4) out += `\nPROMPT 4:\n${b.p4}\n`;
+    if (b.quote) out += `\nFAVORITE PASSAGE:\n${b.quote}\n`;
+    if (b.why) out += `\nANALYSIS:\n${b.why}\n`;
+    if ((b.vocab || []).length) {
+      out += `\nVOCABULARY WORDS:\n`;
+      b.vocab.forEach(v => { out += `  • ${v.w} (${v.p || ''}): ${v.d || ''} — "${v.s || ''}"\n`; });
+    }
+    out += `\n${'='.repeat(60)}\n\n`;
+  }
+  const blob = new Blob([out], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${name.replace(/\s+/g,'_')}_9th_Reading_Journal.txt`;
+  a.click();
+}
+
 function load() {
   try { data = JSON.parse(localStorage.getItem(KEY)||'{}'); } catch(e) { data={}; }
   ['studentName','schoolName','summerYear'].forEach(id => {
