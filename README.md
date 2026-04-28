@@ -47,7 +47,7 @@ Every prompt, vocabulary exercise, and practice question is aligned to a specifi
 | 3A | The House on Mango Street | Sandra Cisneros | Choice A |
 | 3B | Roll of Thunder, Hear My Cry | Mildred D. Taylor | Choice B |
 | 3C | Romeo and Juliet | William Shakespeare | Choice C |
-| 3D | The Hate U Give | Angie Thomas | Choice D |
+| 3D | The Watsons Go to Birmingham — 1963 | Christopher Paul Curtis | Choice D |
 | 3E | Joey Pigza Swallowed the Key | Jack Gantos | Choice E |
 | 4 | Independent selection | Student's choice | Independent |
 
@@ -125,7 +125,7 @@ One Shakespeare play per grade level, building in complexity:
 |-------|-------|--------|----------------|
 | 9th | To Kill a Mockingbird | Harper Lee | Point of view, justice |
 | 9th | Roll of Thunder, Hear My Cry | Mildred D. Taylor | Textual evidence, narrator |
-| 9th | The Hate U Give | Angie Thomas | Code-switching, diction, synthesis with TKAM |
+| 9th | The Watsons Go to Birmingham — 1963 | Christopher Paul Curtis | Tone shift, child narrator, paired with TKAM |
 | 10th | Their Eyes Were Watching God | Zora Neale Hurston | Dialect, voice, narrator reliability |
 | 10th | Night | Elie Wiesel | Testimony, memoir, argument |
 | 10th | The Autobiography of Malcolm X | Malcolm X & Haley | Rhetoric, transformation, paired with Night |
