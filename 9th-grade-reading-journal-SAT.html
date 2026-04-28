@@ -362,10 +362,10 @@
 
 /* ── PRINT ── */
 .print-btn-wrap{width:100%;max-width:780px;display:flex;justify-content:flex-end;padding:10px 0 0;gap:10px}
-.print-btn{background:var(--sat);color:#fff;border:none;padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;text-transform:uppercase}
-.print-btn:hover{background:#963E18}
-.export-btn-p{background:transparent;color:var(--sat);border:1.5px solid var(--sat);padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;text-transform:uppercase}
-.export-btn-p:hover{background:rgba(184,92,42,.1)}
+.print-btn{background:#1E3A6A;color:#fff;border:none;padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;text-transform:uppercase}
+.print-btn:hover{background:#152C52}
+.export-btn-p{background:transparent;color:#1E3A6A;border:1.5px solid #1E3A6A;padding:9px 22px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .2s;text-transform:uppercase}
+.export-btn-p:hover{background:rgba(30,58,106,.08)}
 @media print{
   body{background:#fff;padding:0}
   .journal-cover{background:#1E3A6A!important;box-shadow:none!important;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -427,9 +427,12 @@
 <div class="book-tabs">
   <button class="book-tab active" onclick="switchBook(0,this)" id="tab-0"><span class="tab-num">Book 1</span>Mockingbird<span class="tab-check">✓</span></button>
   <button class="book-tab" onclick="switchBook(1,this)" id="tab-1"><span class="tab-num">Book 2</span>Outsiders<span class="tab-check">✓</span></button>
-  <button class="book-tab" onclick="switchBook(2,this)" id="tab-2"><span class="tab-num">Book 3A</span>Mango St.<span class="tab-check">✓</span></button>
-  <button class="book-tab" onclick="switchBook(3,this)" id="tab-3"><span class="tab-num">Book 3B</span>Roll of Thunder<span class="tab-check">✓</span></button>
-  <button class="book-tab" onclick="switchBook(4,this)" id="tab-4"><span class="tab-num">Indep.</span>My Choice<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(2,this)" id="tab-2"><span class="tab-num">Choice A</span>Mango St.<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(3,this)" id="tab-3"><span class="tab-num">Choice B</span>Roll of Thunder<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(4,this)" id="tab-4"><span class="tab-num">Choice C</span>Romeo &amp; Juliet<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(5,this)" id="tab-5"><span class="tab-num">Choice D</span>Hate U Give<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(6,this)" id="tab-6"><span class="tab-num">Choice E</span>Joey Pigza<span class="tab-check">✓</span></button>
+  <button class="book-tab" onclick="switchBook(7,this)" id="tab-7"><span class="tab-num">Indep.</span>My Choice<span class="tab-check">✓</span></button>
 </div>
 
 <div class="journal-body">
@@ -873,7 +876,272 @@
 <!-- ═══════════════════════════════════════════════════
      BOOK 4/5 — INDEPENDENT
 ═══════════════════════════════════════════════════ -->
+
 <div class="book-panel" id="panel-4">
+  <div class="book-header">
+    <div>
+      <h2>Romeo and Juliet</h2>
+      <div class="author">William Shakespeare · c. 1597 · Choice C</div>
+    </div>
+    <span class="book-badge" style="background:#FFF0F5;color:#8B1A3A;">Drama · Tragedy · Shakespeare</span>
+  </div>
+  <div class="sat-skills-row">
+    <span class="sat-skills-label">SAT Skills:</span>
+    <span class="sat-skill-chip">Drama Structure</span>
+    <span class="sat-skill-chip">Figurative Language</span>
+    <span class="sat-skill-chip">Argument</span>
+    <span class="sat-skill-chip">Language Precision</span>
+  </div>
+  <div class="status-section">
+    <span class="status-label">Status</span>
+    <div class="status-btns">
+      <button class="status-btn" onclick="setStatus(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="status-btn" onclick="setStatus(4,'Reading',this)" style="color:var(--teal);">Reading</button>
+      <button class="status-btn" onclick="setStatus(4,'Finished',this)" style="color:var(--sage);">✓ Finished</button>
+    </div>
+    <div class="rating-wrap" id="stars-4">
+      <span class="star" onclick="setRating(4,1)">★</span><span class="star" onclick="setRating(4,2)">★</span>
+      <span class="star" onclick="setRating(4,3)">★</span><span class="star" onclick="setRating(4,4)">★</span>
+      <span class="star" onclick="setRating(4,5)">★</span>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">🗡️</span><span class="section-label">Prompt 1 · Unpacking Shakespeare's Language</span><span class="sat-tag">SAT: Language</span></div>
+      <div class="prompt-q">Choose the balcony scene (Act II, Scene II). Translate 8–10 lines into plain modern English. Then identify two moments where the poetic language — a metaphor, an image, the rhythm — says something your translation loses. What does this tell you about why Shakespeare wrote in verse instead of plain speech?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> The SAT frequently includes Shakespeare or formal literary prose and tests whether you can identify what specific word choices accomplish. Translating first, then analyzing what gets lost, is the best training method.</div>
+      <textarea class="journal-textarea" id="t4-p1" placeholder="Original lines: | Plain translation: | What's lost (moment 1): | What's lost (moment 2): | Why verse?" oninput="autosave(4)" rows="6"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="evidence-box" style="margin-bottom:20px;">
+      <div class="evidence-label">📌 Cite the Text — SAT: Evidence</div>
+      <textarea class="quote-textarea" id="t4-evidence" placeholder="Find the single line that best captures the theme of love vs. fate. Quote it exactly: &ldquo; ...&rdquo; (Act __, Scene __)" oninput="autosave(4)" rows="2"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">⚖️</span><span class="section-label">Prompt 2 · Is Fate to Blame?</span><span class="sat-tag">SAT: Argument</span></div>
+      <div class="prompt-q">Shakespeare calls Romeo and Juliet "star-crossed lovers" — fated to tragedy. But are they really victims of fate, or of their own choices? Build both arguments using evidence from the play: one case for fate, one for personal responsibility. Then decide which is stronger and explain why.</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Building two opposing arguments from the same text, then evaluating which is better supported, is exactly what SAT argument questions require.</div>
+      <textarea class="journal-textarea" id="t4-p2" placeholder="Case for fate: (evidence) | Case for personal responsibility: (evidence) | Stronger argument: because..." oninput="autosave(4)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">🔗</span><span class="section-label">Prompt 3 · Romeo &amp; Juliet vs. The Outsiders</span><span class="sat-tag">SAT: Synthesis</span></div>
+      <div class="prompt-q">Both Romeo and Juliet and The Outsiders center on young people trapped by conflict between groups they didn't choose. Compare how each author uses the conflict to explore the theme of loyalty. Quote one passage from each. Which author makes a more compelling case about what loyalty costs us?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Cross-text synthesis — connecting two works by theme and comparing how each handles it — is the SAT's highest-difficulty reading skill. This prompt is direct preparation.</div>
+      <textarea class="journal-textarea" id="t4-p3" placeholder="Shakespeare on loyalty: &ldquo;...&rdquo; | Hinton on loyalty: &ldquo;...&rdquo; | Key difference: | More compelling: because..." oninput="autosave(4)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="vocab-section">
+      <div class="section-head"><span class="section-icon">📖</span><span class="section-label">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words</span></div>
+      <div class="vocab-cards" id="vocab-4"></div>
+      <div class="vocab-add-form">
+        <div class="vocab-input-group"><label>Word</label><input class="vocab-inp" id="vw-4" placeholder="e.g. civil, vile, exile" onkeydown="if(event.key='Enter')addVocab(4)"></div>
+        <div class="vocab-input-group"><label>Part of Speech</label><input class="vocab-inp" id="vp-4" placeholder="adj / noun / verb"></div>
+        <div style="display:flex;align-items:flex-end;"><button class="vocab-add-btn" onclick="addVocab(4)">+ Add</button></div>
+        <div class="vocab-def-row">
+          <div class="vocab-input-group"><label>Definition</label><input class="vocab-inp" id="vd-4" placeholder="What it means..."></div>
+          <div class="vocab-input-group"><label>Your sentence</label><input class="vocab-inp" id="vs-4" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">✦</span><span class="section-label">Favorite Passage + Analysis</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evidence-box">
+        <div class="evidence-label">Exact lines from the play:</div>
+        <textarea class="quote-textarea" id="t4-quote" placeholder="&ldquo; ...&rdquo; (Act __, Scene __)" oninput="autosave(4)" rows="2"></textarea>
+      </div>
+      <textarea class="journal-textarea" id="t4-why" placeholder="Device used → what it achieves → why Shakespeare chose these words..." oninput="autosave(4)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="save-bar">
+    <span class="save-notice" id="save-notice-4">✓ Saved</span>
+    <div style="display:flex;gap:8px;">
+      <button class="clear-btn" onclick="clearBook(4)">Clear entries</button>
+      <button class="save-btn" onclick="saveBook(4)">Save Journal</button>
+    </div>
+  </div>
+  <div class="page-num">Page 5 of 8</div>
+</div>
+
+<div class="book-panel" id="panel-5">
+  <div class="book-header">
+    <div>
+      <h2>The Hate U Give</h2>
+      <div class="author">Angie Thomas · 2017 · Choice D</div>
+    </div>
+    <span class="book-badge" style="background:#FFF0E8;color:#8B3A10;">Contemporary · Activism · Voice</span>
+  </div>
+  <div class="sat-skills-row">
+    <span class="sat-skills-label">SAT Skills:</span>
+    <span class="sat-skill-chip">Point of View</span>
+    <span class="sat-skill-chip">Code-Switching</span>
+    <span class="sat-skill-chip">Argument</span>
+    <span class="sat-skill-chip">Tone & Diction</span>
+  </div>
+  <div class="status-section">
+    <span class="status-label">Status</span>
+    <div class="status-btns">
+      <button class="status-btn" onclick="setStatus(5,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="status-btn" onclick="setStatus(5,'Reading',this)" style="color:var(--teal);">Reading</button>
+      <button class="status-btn" onclick="setStatus(5,'Finished',this)" style="color:var(--sage);">✓ Finished</button>
+    </div>
+    <div class="rating-wrap" id="stars-5">
+      <span class="star" onclick="setRating(5,1)">★</span><span class="star" onclick="setRating(5,2)">★</span>
+      <span class="star" onclick="setRating(5,3)">★</span><span class="star" onclick="setRating(5,4)">★</span>
+      <span class="star" onclick="setRating(5,5)">★</span>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">🎤</span><span class="section-label">Prompt 1 · Code-Switching & Voice</span><span class="sat-tag">SAT: Diction & Tone</span></div>
+      <div class="prompt-q">Starr code-switches — she speaks differently at Williamson Prep than she does at home. Find two passages that show this shift: one where she uses her "Williamson voice" and one where she is fully herself. What does each voice reveal about the pressures she's navigating? What is Thomas arguing about identity and belonging?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Diction — the specific words a character or narrator uses — is one of the SAT's most tested concepts. Code-switching is diction made visible. Analyzing it here trains your eye for the same moves on the SAT.</div>
+      <textarea class="journal-textarea" id="t5-p1" placeholder="Williamson voice passage: &ldquo;...&rdquo; → reveals: | Home voice passage: &ldquo;...&rdquo; → reveals: | Thomas's argument:" oninput="autosave(5)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="evidence-box" style="margin-bottom:20px;">
+      <div class="evidence-label">📌 Cite the Text — SAT: Evidence</div>
+      <textarea class="quote-textarea" id="t5-evidence" placeholder="Find the moment Starr decides to speak up publicly. Quote the line where she commits. This is the novel's turning point: &ldquo; ...&rdquo;" oninput="autosave(5)" rows="2"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">📢</span><span class="section-label">Prompt 2 · The Title's Argument</span><span class="sat-tag">SAT: Language</span></div>
+      <div class="prompt-q">The title comes from Tupac's THUG LIFE acronym: "The Hate U Give Little Infants F***s Everybody." Thomas chose this as her title deliberately. Explain what the acronym argues about cycles of violence and poverty. Then find two moments in the novel where this idea plays out. What is Thomas claiming about systemic inequality?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> A title is always the author's first argument. The SAT often asks about how a title, epigraph, or framing device shapes meaning throughout the text.</div>
+      <textarea class="journal-textarea" id="t5-p2" placeholder="What THUG LIFE argues: | Novel moment 1: | Novel moment 2: | Thomas's claim about systemic inequality:" oninput="autosave(5)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">⚖️</span><span class="section-label">Prompt 3 · Connecting to To Kill a Mockingbird</span><span class="sat-tag">SAT: Synthesis</span></div>
+      <div class="prompt-q">Both Atticus Finch and Starr Carter are asked to testify to a truth that the people around them don't want to hear. Compare how each character handles that pressure. Quote one passage from each book. What does reading them together reveal about how much — or how little — America has changed?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Paired-text synthesis is the SAT's highest reading skill. When two books separated by 60 years speak to the same injustice, the comparison is itself an argument.</div>
+      <textarea class="journal-textarea" id="t5-p3" placeholder="Atticus: &ldquo;...&rdquo; | Starr: &ldquo;...&rdquo; | Key similarity: | Key difference: | What both together reveal:" oninput="autosave(5)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="vocab-section">
+      <div class="section-head"><span class="section-icon">📖</span><span class="section-label">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words</span></div>
+      <div class="vocab-cards" id="vocab-5"></div>
+      <div class="vocab-add-form">
+        <div class="vocab-input-group"><label>Word</label><input class="vocab-inp" id="vw-5" placeholder="New word..." onkeydown="if(event.key='Enter')addVocab(5)"></div>
+        <div class="vocab-input-group"><label>Part of Speech</label><input class="vocab-inp" id="vp-5" placeholder="adj / noun / verb"></div>
+        <div style="display:flex;align-items:flex-end;"><button class="vocab-add-btn" onclick="addVocab(5)">+ Add</button></div>
+        <div class="vocab-def-row">
+          <div class="vocab-input-group"><label>Definition</label><input class="vocab-inp" id="vd-5" placeholder="What it means..."></div>
+          <div class="vocab-input-group"><label>Your sentence</label><input class="vocab-inp" id="vs-5" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">✦</span><span class="section-label">Favorite Passage + Analysis</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evidence-box">
+        <div class="evidence-label">Exact quote:</div>
+        <textarea class="quote-textarea" id="t5-quote" placeholder="&ldquo; ...&rdquo;" oninput="autosave(5)" rows="2"></textarea>
+      </div>
+      <textarea class="journal-textarea" id="t5-why" placeholder="Device → effect → what Thomas achieves with this passage..." oninput="autosave(5)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="save-bar">
+    <span class="save-notice" id="save-notice-5">✓ Saved</span>
+    <div style="display:flex;gap:8px;">
+      <button class="clear-btn" onclick="clearBook(5)">Clear entries</button>
+      <button class="save-btn" onclick="saveBook(5)">Save Journal</button>
+    </div>
+  </div>
+  <div class="page-num">Page 6 of 8</div>
+</div>
+
+<div class="book-panel" id="panel-6">
+  <div class="book-header">
+    <div>
+      <h2>Joey Pigza Swallowed the Key</h2>
+      <div class="author">Jack Gantos · 1998 · Choice E</div>
+    </div>
+    <span class="book-badge" style="background:#F0F4FF;color:#2A3A8B;">ADHD · Empathy · Growing Up</span>
+  </div>
+  <div class="sat-skills-row">
+    <span class="sat-skills-label">SAT Skills:</span>
+    <span class="sat-skill-chip">First-Person Narration</span>
+    <span class="sat-skill-chip">Sympathy vs. Empathy</span>
+    <span class="sat-skill-chip">Character Analysis</span>
+    <span class="sat-skill-chip">Tone</span>
+  </div>
+  <div class="status-section">
+    <span class="status-label">Status</span>
+    <div class="status-btns">
+      <button class="status-btn" onclick="setStatus(6,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="status-btn" onclick="setStatus(6,'Reading',this)" style="color:var(--teal);">Reading</button>
+      <button class="status-btn" onclick="setStatus(6,'Finished',this)" style="color:var(--sage);">✓ Finished</button>
+    </div>
+    <div class="rating-wrap" id="stars-6">
+      <span class="star" onclick="setRating(6,1)">★</span><span class="star" onclick="setRating(6,2)">★</span>
+      <span class="star" onclick="setRating(6,3)">★</span><span class="star" onclick="setRating(6,4)">★</span>
+      <span class="star" onclick="setRating(6,5)">★</span>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">⚡</span><span class="section-label">Prompt 1 · Inside Joey's Mind</span><span class="sat-tag">SAT: Narration</span></div>
+      <div class="prompt-q">Gantos writes Joey's narration in a way that mimics how ADHD actually feels — fast, distracted, jumping between thoughts, intensely in the moment. Find two passages where the writing style itself reflects Joey's brain. Describe what the prose does differently from normal narration, and explain how this technique creates empathy in the reader.</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Narrative style — how a story is told, not just what happens — is a core SAT analytical concept. When form mirrors content (the writing feels like the character thinks), that's deliberate craft.</div>
+      <textarea class="journal-textarea" id="t6-p1" placeholder="Passage 1: &ldquo;...&rdquo; → what the prose does: | Passage 2: | How this creates empathy (not just sympathy):" oninput="autosave(6)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="evidence-box" style="margin-bottom:20px;">
+      <div class="evidence-label">📌 Cite the Text — SAT: Evidence</div>
+      <textarea class="quote-textarea" id="t6-evidence" placeholder="Find the moment that best shows Joey is not a bad kid — just a kid whose brain works differently. Quote it: &ldquo; ...&rdquo;" oninput="autosave(6)" rows="2"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">🏫</span><span class="section-label">Prompt 2 · Systems & Kids</span><span class="sat-tag">SAT: Argument</span></div>
+      <div class="prompt-q">Joey struggles not just with ADHD but with systems — school, family, special education — that were not built with him in mind. Identify two moments where a system fails Joey. For each: what was the system supposed to do? What did it actually do? What is Gantos arguing about how institutions treat kids who don't fit the mold?</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Identifying an author's implicit argument — the claim embedded in the story rather than stated outright — is one of the SAT's most tested inference skills.</div>
+      <textarea class="journal-textarea" id="t6-p2" placeholder="System 1: supposed to → actually did → | System 2: | Gantos's argument:" oninput="autosave(6)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">🔗</span><span class="section-label">Prompt 3 · Joey &amp; Holden / Joey &amp; Starr</span><span class="sat-tag">SAT: Synthesis</span></div>
+      <div class="prompt-q">Compare Joey to one other narrator from this year's reading list. What do they share? How are their challenges different? Which narrator do you find more reliable — meaning, which one do you trust to tell their own story accurately — and why? Use a quote from each book.</div>
+      <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Narrator reliability is a high-frequency SAT concept. When a narrator has limited self-awareness, the reader must read between the lines — exactly what this comparison trains.</div>
+      <textarea class="journal-textarea" id="t6-p3" placeholder="Joey: &ldquo;...&rdquo; | Other narrator: &ldquo;...&rdquo; | What they share: | Key difference: | More reliable narrator: because..." oninput="autosave(6)" rows="5"></textarea>
+    </div>
+    <hr class="divider">
+    <div class="vocab-section">
+      <div class="section-head"><span class="section-icon">📖</span><span class="section-label">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words</span></div>
+      <div class="vocab-cards" id="vocab-6"></div>
+      <div class="vocab-add-form">
+        <div class="vocab-input-group"><label>Word</label><input class="vocab-inp" id="vw-6" placeholder="New word..." onkeydown="if(event.key='Enter')addVocab(6)"></div>
+        <div class="vocab-input-group"><label>Part of Speech</label><input class="vocab-inp" id="vp-6" placeholder="adj / noun / verb"></div>
+        <div style="display:flex;align-items:flex-end;"><button class="vocab-add-btn" onclick="addVocab(6)">+ Add</button></div>
+        <div class="vocab-def-row">
+          <div class="vocab-input-group"><label>Definition</label><input class="vocab-inp" id="vd-6" placeholder="What it means..."></div>
+          <div class="vocab-input-group"><label>Your sentence</label><input class="vocab-inp" id="vs-6" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="prompt-block">
+      <div class="section-head"><span class="section-icon">✦</span><span class="section-label">Favorite Passage + Analysis</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evidence-box">
+        <div class="evidence-label">Exact quote:</div>
+        <textarea class="quote-textarea" id="t6-quote" placeholder="&ldquo; ...&rdquo;" oninput="autosave(6)" rows="2"></textarea>
+      </div>
+      <textarea class="journal-textarea" id="t6-why" placeholder="Device → effect → what Gantos achieves with this passage..." oninput="autosave(6)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="save-bar">
+    <span class="save-notice" id="save-notice-6">✓ Saved</span>
+    <div style="display:flex;gap:8px;">
+      <button class="clear-btn" onclick="clearBook(6)">Clear entries</button>
+      <button class="save-btn" onclick="saveBook(6)">Save Journal</button>
+    </div>
+  </div>
+  <div class="page-num">Page 7 of 8</div>
+</div>
+
+<div class="book-panel" id="panel-7">
   <div class="book-info-strip">
     <div class="book-title-block">
       <h2 id="indep-title-display">Independent Reading</h2>
@@ -896,14 +1164,14 @@
   <div class="status-section">
     <span class="status-label">Status</span>
     <div class="status-btns">
-      <button class="status-btn" onclick="setStatus(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
-      <button class="status-btn" onclick="setStatus(4,'Reading',this)" style="color:var(--teal);">Reading</button>
-      <button class="status-btn" onclick="setStatus(4,'Finished',this)" style="color:var(--sage);">✓ Finished</button>
+      <button class="status-btn" onclick="setStatus(7,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="status-btn" onclick="setStatus(7,'Reading',this)" style="color:var(--teal);">Reading</button>
+      <button class="status-btn" onclick="setStatus(7,'Finished',this)" style="color:var(--sage);">✓ Finished</button>
     </div>
-    <div class="rating-wrap" id="stars-4">
-      <span class="star" onclick="setRating(4,1)">★</span><span class="star" onclick="setRating(4,2)">★</span>
-      <span class="star" onclick="setRating(4,3)">★</span><span class="star" onclick="setRating(4,4)">★</span>
-      <span class="star" onclick="setRating(4,5)">★</span>
+    <div class="rating-wrap" id="stars-7">
+      <span class="star" onclick="setRating(7,1)">★</span><span class="star" onclick="setRating(7,2)">★</span>
+      <span class="star" onclick="setRating(7,3)">★</span><span class="star" onclick="setRating(7,4)">★</span>
+      <span class="star" onclick="setRating(7,5)">★</span>
     </div>
   </div>
 
@@ -912,7 +1180,7 @@
       <div class="section-head"><span class="section-icon">🎯</span><span class="section-label">Prompt 1 · Claim + Evidence</span><span class="sat-tag">SAT: Evidence</span></div>
       <div class="prompt-q">Make an argument about your book's central theme in one sentence. Then provide three pieces of textual evidence — each a direct quote — that support your claim. For each quote, write one sentence explaining the connection.</div>
       <div class="prompt-tip">💡 <strong>SAT Skill:</strong> This is the foundational SAT writing move: Claim → Evidence → Explanation (CEE). Every SAT essay and evidence question uses this structure.</div>
-      <textarea class="journal-textarea" id="t4-p1" placeholder="Claim: | Evidence 1: &ldquo;...&rdquo; → Because... | Evidence 2: &ldquo;...&rdquo; → Because... | Evidence 3: ..." oninput="autosave(4)" rows="6"></textarea>
+      <textarea class="journal-textarea" id="t7-p1" placeholder="Claim: | Evidence 1: &ldquo;...&rdquo; → Because... | Evidence 2: &ldquo;...&rdquo; → Because... | Evidence 3: ..." oninput="autosave(7)" rows="6"></textarea>
     </div>
     <hr class="divider">
 
@@ -920,7 +1188,7 @@
       <div class="section-head"><span class="section-icon">🌱</span><span class="section-label">Prompt 2 · Character Arc</span><span class="sat-tag">SAT: Analysis</span></div>
       <div class="prompt-q">Describe the main character's arc: who are they at the start vs. the end? Identify the single most important turning point — the moment where change becomes inevitable. Quote the passage where that shift is clearest, and explain what makes it the pivot.</div>
       <div class="prompt-tip">💡 <strong>SAT Skill:</strong> The SAT asks "what does this passage suggest about the character?" Practice locating the precise moment of change — not summarizing the whole arc.</div>
-      <textarea class="journal-textarea" id="t4-p2" placeholder="Start: | End: | Turning point (quote): &ldquo;...&rdquo; | Why this moment: ..." oninput="autosave(4)" rows="5"></textarea>
+      <textarea class="journal-textarea" id="t7-p2" placeholder="Start: | End: | Turning point (quote): &ldquo;...&rdquo; | Why this moment: ..." oninput="autosave(7)" rows="5"></textarea>
     </div>
     <hr class="divider">
 
@@ -928,7 +1196,7 @@
       <div class="section-head"><span class="section-icon">🔗</span><span class="section-label">Prompt 3 · Cross-Text Synthesis</span><span class="sat-tag">SAT: Synthesis</span></div>
       <div class="prompt-q">Compare your independent book to one other book from this list. Identify one shared theme and one key difference in how each author develops it. Use a quote from each book. Which treatment do you find more convincing, and why?</div>
       <div class="prompt-tip">💡 <strong>SAT Skill:</strong> Synthesis — drawing connections across texts — is the highest-order SAT reading skill. This prompt directly practices it.</div>
-      <textarea class="journal-textarea" id="t4-p3" placeholder="Shared theme: | Book A quote: &ldquo;...&rdquo; | Book B quote: &ldquo;...&rdquo; | Key difference: | More convincing: ..." oninput="autosave(4)" rows="6"></textarea>
+      <textarea class="journal-textarea" id="t7-p3" placeholder="Shared theme: | Book A quote: &ldquo;...&rdquo; | Book B quote: &ldquo;...&rdquo; | Key difference: | More convincing: ..." oninput="autosave(7)" rows="6"></textarea>
     </div>
     <hr class="divider">
 
@@ -936,20 +1204,20 @@
       <div class="section-head"><span class="section-icon">🖊️</span><span class="section-label">Prompt 4 · Practice Short Essay</span><span class="sat-tag">SAT: Writing</span></div>
       <div class="prompt-q">Write a focused 3-paragraph response: (1) Introduce the book and state your claim about its theme. (2) Develop the claim with a quote and analysis. (3) Conclude by explaining why this theme matters beyond the book. Aim for 200–250 words. This is SAT essay practice.</div>
       <div class="prompt-tip">💡 <strong>SAT Skill:</strong> The SAT essay (where included) rewards clear thesis, specific evidence, and logical development. This is full practice.</div>
-      <textarea class="journal-textarea" id="t4-p4" placeholder="Paragraph 1 (claim): | Paragraph 2 (evidence + analysis): | Paragraph 3 (significance):" oninput="autosave(4)" rows="8"></textarea>
+      <textarea class="journal-textarea" id="t7-p4" placeholder="Paragraph 1 (claim): | Paragraph 2 (evidence + analysis): | Paragraph 3 (significance):" oninput="autosave(7)" rows="8"></textarea>
     </div>
     <hr class="divider">
 
     <div class="vocab-section">
       <div class="section-head"><span class="section-icon">📖</span><span class="section-label">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words</span></div>
-      <div class="vocab-cards" id="vocab-4"></div>
+      <div class="vocab-cards" id="vocab-7"></div>
       <div class="vocab-add-form">
-        <div class="vocab-input-group"><label>Word</label><input class="vocab-inp" id="vw-4" placeholder="New word..." onkeydown="if(event.key==='Enter')addVocab(4)"></div>
-        <div class="vocab-input-group"><label>Part of Speech</label><input class="vocab-inp" id="vp-4" placeholder="adj / noun / verb"></div>
-        <div style="display:flex;align-items:flex-end;"><button class="vocab-add-btn" onclick="addVocab(4)">+ Add</button></div>
+        <div class="vocab-input-group"><label>Word</label><input class="vocab-inp" id="vw-7" placeholder="New word..." onkeydown="if(event.key==='Enter')addVocab(7)"></div>
+        <div class="vocab-input-group"><label>Part of Speech</label><input class="vocab-inp" id="vp-7" placeholder="adj / noun / verb"></div>
+        <div style="display:flex;align-items:flex-end;"><button class="vocab-add-btn" onclick="addVocab(7)">+ Add</button></div>
         <div class="vocab-def-row">
-          <div class="vocab-input-group"><label>Definition</label><input class="vocab-inp" id="vd-4" placeholder="What it means..."></div>
-          <div class="vocab-input-group"><label>Your sentence</label><input class="vocab-inp" id="vs-4" placeholder="Use it..."></div>
+          <div class="vocab-input-group"><label>Definition</label><input class="vocab-inp" id="vd-7" placeholder="What it means..."></div>
+          <div class="vocab-input-group"><label>Your sentence</label><input class="vocab-inp" id="vs-7" placeholder="Use it..."></div>
         </div>
       </div>
     </div>
@@ -959,24 +1227,25 @@
       <div class="section-head"><span class="section-icon">✦</span><span class="section-label">Favorite Passage + Analysis</span><span class="sat-tag">SAT: Close Reading</span></div>
       <div class="evidence-box">
         <div class="evidence-label">Exact quote:</div>
-        <textarea class="quote-textarea" id="t4-quote" placeholder="&ldquo; ...&rdquo;" oninput="autosave(4)" rows="2"></textarea>
+        <textarea class="quote-textarea" id="t7-quote" placeholder="&ldquo; ...&rdquo;" oninput="autosave(7)" rows="2"></textarea>
       </div>
-      <textarea class="journal-textarea" id="t4-why" placeholder="Technique → Effect → Why it matters to the story..." oninput="autosave(4)" rows="3"></textarea>
+      <textarea class="journal-textarea" id="t7-why" placeholder="Technique → Effect → Why it matters to the story..." oninput="autosave(7)" rows="3"></textarea>
     </div>
   </div>
 
   <div class="save-bar">
     <span class="saved-note" id="saved-4">✓ Saved</span>
     <div style="display:flex;gap:8px;">
-      <button class="clear-btn" onclick="clearBook(4)">Clear entries</button>
-      <button class="save-btn" onclick="saveBook(4)">Save Journal</button>
+      <button class="clear-btn" onclick="clearBook(7)">Clear entries</button>
+      <button class="save-btn" onclick="saveBook(7)">Save Journal</button>
     </div>
   </div>
-  <div class="page-num">Page 5 of 5</div>
+  <div class="page-num">Page 8 of 8</div>
 </div>
 
-</div><!-- /journal-body -->
 
+
+</div><!-- /journal-body -->
 <script>
 const KEY = 'journal9_sat_v2';
 let data = {};
@@ -1067,7 +1336,7 @@ function renderVocab(idx) {
 }
 function updateVocabCount() {
   let total = 0;
-  for(let i=0;i<5;i++) total += ((data['book'+i]||{}).vocab||[]).length;
+  for(let i=0;i<8;i++) total += ((data['book'+i]||{}).vocab||[]).length;
   document.getElementById('vocabCount').textContent = total;
 }
 
@@ -1083,9 +1352,12 @@ function exportTxt(){
     'The Outsiders',
     'The House on Mango Street',
     'Roll of Thunder, Hear My Cry',
+    'Romeo and Juliet',
+    'The Hate U Give',
+    'Joey Pigza Swallowed the Key',
     'Independent Reading'
   ];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     const b = data['book' + i] || {};
     out += `BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
     if (b.p1) out += `\nPROMPT 1:\n${b.p1}\n`;
@@ -1113,7 +1385,7 @@ function load() {
   ['studentName','schoolName','summerYear'].forEach(id => {
     if(data[id]) document.getElementById(id).value = data[id];
   });
-  for(let i=0;i<5;i++){
+  for(let i=0;i<8;i++){
     const bd = data['book'+i]||{};
     ['p1','p2','p3','p4','quote','why','evidence'].forEach(k=>{
       const el = document.getElementById(`t${i}-${k}`);
@@ -1211,11 +1483,11 @@ function applyRating(idx,val){
 }
 function updateProgress(){
   let done=0;
-  for(let i=0;i<5;i++) if((data['book'+i]||{}).status==='Finished') done++;
-  const pct=Math.round(done/5*100);
+  for(let i=0;i<8;i++) if((data['book'+i]||{}).status==='Finished') done++;
+  const pct=Math.round(done/8*100);
   document.getElementById('progressFill').style.width=pct+'%';
   document.getElementById('progressPct').textContent=pct+'%';
-  document.getElementById('booksComplete').textContent=done+'/5';
+  document.getElementById('booksComplete').textContent=done+'/8';
 }
 
 // ── TABS ──

@@ -293,9 +293,12 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
 <div class="tabs">
   <button class="tab active" onclick="sw(0,this)" id="tab-0"><span class="tnum">Book 1</span>Lord of Flies<span class="tab-ck">✓</span></button>
   <button class="tab" onclick="sw(1,this)" id="tab-1"><span class="tnum">Book 2</span>Mice & Men<span class="tab-ck">✓</span></button>
-  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Book 3A</span>Night<span class="tab-ck">✓</span></button>
-  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Book 3B</span>Eyes Were Watching<span class="tab-ck">✓</span></button>
-  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Indep.</span>My Choice<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Choice A</span>Night<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Choice B</span>Eyes Were Watching<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Choice C</span>Julius Caesar<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(5,this)" id="tab-5"><span class="tnum">Choice D</span>Malcolm X<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(6,this)" id="tab-6"><span class="tnum">Choice E</span>Uncle Tom's Cabin<span class="tab-ck">✓</span></button>
+  <button class="tab" onclick="sw(7,this)" id="tab-7"><span class="tnum">Indep.</span>My Choice<span class="tab-ck">✓</span></button>
 </div>
 
 <div class="journal">
@@ -383,7 +386,7 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
 <div class="panel" id="p-1">
   <div class="bhead">
     <div><h2>Of Mice and Men</h2><div class="auth">John Steinbeck · 1937 · Required</div></div>
-    <span class="badge" style="background:#EBF5F4;color:#1B4F72;">Novel · American Dream</span>
+    <span class="badge" style="background:#EBF5F4;color:#1B4F72;">Novella · American Dream</span>
   </div>
   <div class="skills-row"><span class="skills-lbl">SAT Skills:</span><span class="chip">Tone & Diction</span><span class="chip">Foreshadowing</span><span class="chip">Central Idea</span><span class="chip">Argument Quality</span></div>
   <div class="srow">
@@ -398,13 +401,13 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
   <div class="page">
     <div class="pblock">
       <div class="phead"><span class="picon">🌾</span><span class="plbl">Prompt 1 · Foreshadowing & Structure</span><span class="sat-tag">SAT: Reading</span></div>
-      <div class="pq">Steinbeck uses foreshadowing so precisely that the ending feels inevitable. Identify three moments early in the novel that foreshadow the conclusion. For each: quote the line, name what it predicts, and explain how it works as a literary device.</div>
+      <div class="pq">Steinbeck uses foreshadowing so precisely that the ending feels inevitable. Identify three moments early in the novella that foreshadow the conclusion. For each: quote the line, name what it predicts, and explain how it works as a literary device.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT asks how earlier details "prepare the reader for" later events — this is foreshadowing analysis. Tracing structure across a text is a high-value skill.</div>
       <textarea class="jta" id="t1-p1" placeholder="Foreshadow 1: &ldquo;...&rdquo; → predicts: | #2: | #3:" oninput="as(1)" rows="5"></textarea>
     </div>
     <hr class="div">
     <div class="phead" style="margin-bottom:6px"><span class="picon">📌</span><span class="plbl">Cite the Text</span><span class="sat-tag">SAT: Evidence</span></div>
-    <div class="ptip" style="margin-left:0;margin-bottom:10px">Copy one sentence that captures the loneliness that runs through this novel. Choose a line that does the work without stating it outright.</div>
+    <div class="ptip" style="margin-left:0;margin-bottom:10px">Copy one sentence that captures the loneliness that runs through this novella. Choose a line that does the work without stating it outright.</div>
     <div class="evbox"><div class="evlbl">Your evidence quote:</div><textarea class="qta" id="t1-ev" placeholder="&ldquo; ...&rdquo; (Ch. __)" oninput="as(1)" rows="2"></textarea></div>
     <hr class="div">
     <div class="pblock">
@@ -423,7 +426,7 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
     <hr class="div">
     <div class="satq">
       <div class="sqhead"><span>🎯</span><span class="sqtitle">SAT-Style Question · Of Mice and Men</span></div>
-      <div class="sq">When George shoots Lennie at the end of the novel, Steinbeck most likely intends this act to be understood as:</div>
+      <div class="sq">When George shoots Lennie at the end of the novella, Steinbeck most likely intends this act to be understood as:</div>
       <div class="choices" id="sq-1">
         <div class="choice" onclick="sel(1,0,this)"><div class="cltr">A</div><div class="ctxt">A failure of friendship, showing that George ultimately prioritizes self-preservation</div></div>
         <div class="choice" onclick="sel(1,1,this)"><div class="cltr">B</div><div class="ctxt">An act of mercy and love, protecting Lennie from a crueler fate at the hands of others</div></div>
@@ -616,6 +619,195 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
 <!-- INDEPENDENT -->
 <div class="panel" id="p-4">
   <div class="bhead">
+    <div><h2>Julius Caesar</h2><div class="auth">William Shakespeare · c. 1599 · Choice C</div></div>
+    <span class="badge" style="background:#FFF8F0;color:#8B4510;">Drama · Power · Rhetoric</span>
+  </div>
+  <div class="skills-row"><span class="skills-lbl">SAT Skills:</span><span class="chip">Rhetoric & Persuasion</span><span class="chip">Argument Analysis</span><span class="chip">Dramatic Irony</span><span class="chip">Language Precision</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#2D7D7A;">Reading</button>
+      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#2D5A3D;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🎙️</span><span class="plbl">Prompt 1 · Antony's Funeral Speech: Rhetoric Masterclass</span><span class="sat-tag">SAT: Rhetoric</span></div>
+      <div class="pq">Mark Antony's "Friends, Romans, countrymen" speech (Act III, Scene II) is one of the most analyzed rhetorical performances in literature. Identify three specific persuasion techniques he uses — repetition, irony, emotional appeal, evidence, etc. For each: quote the moment, name the technique, and explain exactly how it moves the crowd from mourning to rage.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Rhetoric analysis — identifying how a speaker uses language to persuade — is tested directly on the SAT. Antony's speech is the perfect training ground: every line is a deliberate rhetorical move.</div>
+      <textarea class="jta" id="t4-p1" placeholder="Technique 1: &ldquo;...&rdquo; → name: → effect: | Technique 2: | Technique 3: | How the crowd shifts:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t4-ev" placeholder="Find the line where Antony says one thing but means the opposite — the purest moment of irony in the speech. Quote it exactly: &ldquo; ...&rdquo; (Act __, Scene __)" oninput="as(4)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">⚖️</span><span class="picon-lbl"></span><span class="plbl">Prompt 2 · Brutus vs. Antony: Two Arguments, One Event</span><span class="sat-tag">SAT: Argument</span></div>
+      <div class="pq">Brutus and Antony both speak at Caesar's funeral, but their speeches accomplish opposite things. Compare their rhetorical strategies: What is each man's central claim? What kind of evidence does each use (logic, emotion, repetition, imagery)? Why does Antony's speech win the crowd when Brutus's doesn't?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Comparing two arguments on the same topic — same event, different strategies, different outcomes — is exactly what the SAT's paired-passage argument questions test.</div>
+      <textarea class="jta" id="t4-p2" placeholder="Brutus's claim: | His strategy: | Antony's claim: | His strategy: | Why Antony wins: because..." oninput="as(4)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🏛️</span><span class="plbl">Prompt 3 · Julius Caesar &amp; Lord of the Flies: Power Without Restraint</span><span class="sat-tag">SAT: Synthesis</span></div>
+      <div class="pq">Both Julius Caesar and Lord of the Flies ask what happens when human beings seize power and remove the structures that restrain them. Compare how Shakespeare and Golding each dramatize this. Quote one moment from each where the collapse of order becomes visible. Which portrayal is more disturbing, and why?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Cross-text synthesis with a specific analytical lens (power + collapse of order) is the most sophisticated SAT reading task. Pick a precise comparison, not a general one.</div>
+      <textarea class="jta" id="t4-p3" placeholder="Caesar moment: &ldquo;...&rdquo; | Flies moment: &ldquo;...&rdquo; | Key similarity: | Key difference: | More disturbing: because..." oninput="as(4)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="phead"><span class="picon">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-4"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="e.g. augury, portent, valor" onkeydown="if(event.key==='Enter')addV(4)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vdefrow">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact lines:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo; (Act __, Scene __)" oninput="as(4)" rows="2"></textarea></div>
+      <textarea class="jta" id="t4-wy" placeholder="Device → effect → what Shakespeare achieves with these specific words..." oninput="as(4)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="saven" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
+  <div class="pgnum">Page 5 of 8</div>
+</div>
+
+<div class="panel" id="p-5">
+  <div class="bhead">
+    <div><h2>The Autobiography of Malcolm X</h2><div class="auth">Malcolm X &amp; Alex Haley · 1965 · Choice D</div></div>
+    <span class="badge" style="background:#FFF8E8;color:#7A5010;">Memoir · Rhetoric · Transformation</span>
+  </div>
+  <div class="skills-row"><span class="skills-lbl">SAT Skills:</span><span class="chip">Memoir vs. Argument</span><span class="chip">Rhetoric</span><span class="chip">Author's Purpose</span><span class="chip">Paired Texts</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(5,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(5,'Reading',this)" style="color:#2D7D7A;">Reading</button>
+      <button class="sbtn" onclick="setSt(5,'Finished',this)" style="color:#2D5A3D;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-5"><span class="star" onclick="setR(5,1)">★</span><span class="star" onclick="setR(5,2)">★</span><span class="star" onclick="setR(5,3)">★</span><span class="star" onclick="setR(5,4)">★</span><span class="star" onclick="setR(5,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🔄</span><span class="plbl">Prompt 1 · Three Transformations</span><span class="sat-tag">SAT: Analysis</span></div>
+      <div class="pq">Malcolm X transforms at least three times across this autobiography — in identity, belief, and worldview. Identify three distinct versions of Malcolm. For each: what did he believe, what caused the shift, and what quote captures the moment of change? What does Malcolm X argue, through his own life, about the human capacity for growth?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Tracking how a subject's views or identity evolve across a text — and identifying what drives each shift — is a core SAT memoir and biography reading skill.</div>
+      <textarea class="jta" id="t5-p1" placeholder="Malcolm 1 — believed: | Shift caused by: | Quote: &ldquo;...&rdquo; | Malcolm 2: | Malcolm 3: | His argument about human growth:" oninput="as(5)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t5-ev" placeholder="Find the most rhetorically powerful sentence in the book — the line where Malcolm X makes his clearest argument. Quote it: &ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🎙️</span><span class="plbl">Prompt 2 · Malcolm X's Rhetoric</span><span class="sat-tag">SAT: Rhetoric</span></div>
+      <div class="pq">Malcolm X was one of the most powerful orators of the 20th century. Find a speech or passage in the autobiography where his rhetorical power is most visible. Identify two specific techniques he uses — anaphora, direct address, contrast, statistics, personal testimony. For each: quote it, name it, explain how it moves the audience.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Rhetoric — how speakers use language strategically to persuade — appears on every SAT. Studying Malcolm X alongside Julius Caesar shows you that rhetoric is timeless: the same techniques work across centuries.</div>
+      <textarea class="jta" id="t5-p2" placeholder="Technique 1: &ldquo;...&rdquo; → name: → effect: | Technique 2: → name: → effect: | How both build his argument:" oninput="as(5)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🔗</span><span class="plbl">Prompt 3 · Malcolm X &amp; Night: Bearing Witness</span><span class="sat-tag">SAT: Paired Texts</span></div>
+      <div class="pq">Both Night and The Autobiography of Malcolm X are first-person accounts of surviving systematic dehumanization. Compare how each narrator uses testimony — telling their own story — as an act of resistance. Quote one passage from each. What is each man arguing by choosing to write and publish his experience?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Comparing two memoirs on a shared theme (testimony as resistance) is a classic SAT paired-passage task. The key is precision: same theme, different contexts, different rhetorical choices.</div>
+      <textarea class="jta" id="t5-p3" placeholder="Wiesel on testimony: &ldquo;...&rdquo; | Malcolm X on testimony: &ldquo;...&rdquo; | Key similarity: | Key difference: | What each argues by writing:" oninput="as(5)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="phead"><span class="picon">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-5"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-5" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(5)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-5" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(5)">+ Add</button></div>
+        <div class="vdefrow">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-5" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-5" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t5-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+      <textarea class="jta" id="t5-wy" placeholder="Device → effect → what Malcolm X achieves with these words..." oninput="as(5)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="saven" id="sv-5">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(5)">Clear</button><button class="savebtn" onclick="save(5)">Save Journal</button></div></div>
+  <div class="pgnum">Page 6 of 8</div>
+</div>
+
+<div class="panel" id="p-6">
+  <div class="bhead">
+    <div><h2>Uncle Tom's Cabin</h2><div class="auth">Harriet Beecher Stowe · 1852 · Choice E</div></div>
+    <span class="badge" style="background:#F0F8F0;color:#1A5C2A;">Historical · Abolitionist · Argument</span>
+  </div>
+  <div class="skills-row"><span class="skills-lbl">SAT Skills:</span><span class="chip">Argument & Purpose</span><span class="chip">Pathos</span><span class="chip">Historical Context</span><span class="chip">Narrator's Stance</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(6,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(6,'Reading',this)" style="color:#2D7D7A;">Reading</button>
+      <button class="sbtn" onclick="setSt(6,'Finished',this)" style="color:#2D5A3D;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-6"><span class="star" onclick="setR(6,1)">★</span><span class="star" onclick="setR(6,2)">★</span><span class="star" onclick="setR(6,3)">★</span><span class="star" onclick="setR(6,4)">★</span><span class="star" onclick="setR(6,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pblock">
+      <div class="phead"><span class="picon">📣</span><span class="plbl">Prompt 1 · Fiction as Political Argument</span><span class="sat-tag">SAT: Author's Purpose</span></div>
+      <div class="pq">Abraham Lincoln reportedly called Stowe "the little woman who wrote the book that started this great war." Uncle Tom's Cabin was written as abolitionist propaganda — a novel designed to change minds. Identify three specific techniques Stowe uses to make her political argument through fiction: emotional scenes, character design, narrator commentary. For each, quote the passage and explain the persuasive strategy.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Author's purpose — why was this written, and how does every craft choice serve that purpose? — is one of the SAT's most fundamental questions. Stowe's purpose is unusually explicit, making her technique easy to study.</div>
+      <textarea class="jta" id="t6-p1" placeholder="Technique 1: &ldquo;...&rdquo; → purpose: | Technique 2: | Technique 3: | How fiction argues more powerfully than a pamphlet:" oninput="as(6)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t6-ev" placeholder="Find the scene or passage that you believe most powerfully advances Stowe's abolitionist argument. Quote it: &ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🏛️</span><span class="plbl">Prompt 2 · Reading a Historical Text Critically</span><span class="sat-tag">SAT: Critical Reading</span></div>
+      <div class="pq">Uncle Tom's Cabin was groundbreaking in 1852 but has also been criticized for its racial stereotypes and the way it centers white sympathy. Hold both truths simultaneously: What did the book accomplish that was historically significant? What are its limitations by today's standards? Quote one moment that shows each. What does this teach us about reading historical texts?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT expects sophisticated readers who can evaluate a text's strengths and limitations — not just summarize what it says. Historical texts require extra critical distance.</div>
+      <textarea class="jta" id="t6-p2" placeholder="Historical significance: &ldquo;...&rdquo; | Limitation by today's standards: &ldquo;...&rdquo; | What this teaches about reading historical texts:" oninput="as(6)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">🔗</span><span class="plbl">Prompt 3 · Stowe, Wiesel &amp; Thomas: Three Witnesses</span><span class="sat-tag">SAT: Synthesis</span></div>
+      <div class="pq">Harriet Beecher Stowe (1852), Elie Wiesel (1960), and Angie Thomas (2017) all wrote books designed to make readers feel the weight of injustice. Compare how each author uses a specific literary technique — imagery, character, testimony — to create moral urgency. Quote one line from each. What does writing across these three centuries tell us about literature's role in social change?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Three-text synthesis — finding what multiple sources together reveal — is the most advanced SAT reading skill and the foundation of college-level literary analysis.</div>
+      <textarea class="jta" id="t6-p3" placeholder="Stowe: &ldquo;...&rdquo; technique: | Wiesel: &ldquo;...&rdquo; technique: | Thomas: &ldquo;...&rdquo; technique: | What all three together reveal:" oninput="as(6)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="phead"><span class="picon">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-6"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-6" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(6)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-6" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(6)">+ Add</button></div>
+        <div class="vdefrow">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-6" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-6" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pblock">
+      <div class="phead"><span class="picon">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="sat-tag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t6-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+      <textarea class="jta" id="t6-wy" placeholder="Device → effect → what Stowe achieves with this passage..." oninput="as(6)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="saven" id="sv-6">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(6)">Clear</button><button class="savebtn" onclick="save(6)">Save Journal</button></div></div>
+  <div class="pgnum">Page 7 of 8</div>
+</div>
+
+<div class="panel" id="p-7">
+  <div class="bhead">
     <div><h2 id="itd">Independent Reading</h2><div class="auth" id="ita">Animal Farm · The Kite Runner · or your approved title</div></div>
     <span class="badge" style="background:#F0F4FF;color:#1B4F72;">My Choice</span>
   </div>
@@ -628,60 +820,61 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 20% 80%,rg
   <div class="srow">
     <span class="slbl">Status</span>
     <div class="sbtns">
-      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
-      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#2D7D7A;">Reading</button>
-      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#2D5A3D;">✓ Finished</button>
+      <button class="sbtn" onclick="setSt(7,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(7,'Reading',this)" style="color:#2D7D7A;">Reading</button>
+      <button class="sbtn" onclick="setSt(7,'Finished',this)" style="color:#2D5A3D;">✓ Finished</button>
     </div>
-    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+    <div class="stars" id="stars-7"><span class="star" onclick="setR(7,1)">★</span><span class="star" onclick="setR(7,2)">★</span><span class="star" onclick="setR(7,3)">★</span><span class="star" onclick="setR(7,4)">★</span><span class="star" onclick="setR(7,5)">★</span></div>
   </div>
   <div class="page">
     <div class="pblock">
       <div class="phead"><span class="picon">🎯</span><span class="plbl">Prompt 1 · Claim + 3 Pieces of Evidence</span><span class="sat-tag">SAT: Evidence</span></div>
       <div class="pq">Write one sentence stating the central idea of your book. Then provide three direct quotes as evidence. For each quote, write one sentence connecting it back to your claim. This is the CEE structure (Claim → Evidence → Explanation) — the foundation of SAT essay writing.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> CEE (Claim-Evidence-Explanation) is the atomic unit of SAT analytical writing. Master this pattern and you can answer any evidence question.</div>
-      <textarea class="jta" id="t4-p1" placeholder="Claim: | E1: &ldquo;...&rdquo; → Because: | E2: | E3:" oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p1" placeholder="Claim: | E1: &ldquo;...&rdquo; → Because: | E2: | E3:" oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pblock">
       <div class="phead"><span class="picon">🔗</span><span class="plbl">Prompt 2 · Cross-Text Comparison</span><span class="sat-tag">SAT: Paired Texts</span></div>
       <div class="pq">Compare your book to one book from this year's list. Identify a shared theme and a key difference in how each author handles it. Quote both books. Which treatment is more effective and why? This is exactly what SAT paired-passage questions ask.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> Paired-passage synthesis — what do both texts share? how do they differ? — is guaranteed on the SAT Reading section.</div>
-      <textarea class="jta" id="t4-p2" placeholder="Shared theme: | My book quote: &ldquo;...&rdquo; | Other book quote: | Key difference: | More effective: because..." oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p2" placeholder="Shared theme: | My book quote: &ldquo;...&rdquo; | Other book quote: | Key difference: | More effective: because..." oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pblock">
       <div class="phead"><span class="picon">🖊️</span><span class="plbl">Prompt 3 · SAT Practice Essay (3 Paragraphs)</span><span class="sat-tag">SAT: Essay Writing</span></div>
       <div class="pq">Write a focused 3-paragraph analytical response: ¶1 — introduce the book and state your argument. ¶2 — develop with a specific quote and analysis (explain the how, not just the what). ¶3 — explain why this theme matters beyond the page. Target 200–250 words.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> This is a full SAT analytical essay in miniature. Focus on specificity, evidence, and the "so what?" — the significance beyond the story.</div>
-      <textarea class="jta" id="t4-p3" placeholder="¶1 — Introduction + argument: | ¶2 — Evidence + analysis: | ¶3 — Significance:" oninput="as(4)" rows="8"></textarea>
+      <textarea class="jta" id="t7-p3" placeholder="¶1 — Introduction + argument: | ¶2 — Evidence + analysis: | ¶3 — Significance:" oninput="as(7)" rows="8"></textarea>
     </div>
     <hr class="div">
     <div class="vsec">
       <div class="phead"><span class="picon">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="sat-tag">SAT: Words in Context</span></div>
-      <div class="vcards" id="vc-4"></div>
+      <div class="vcards" id="vc-7"></div>
       <div class="vadd">
-        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(4)"></div>
-        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
-        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-7" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(7)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-7" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(7)">+ Add</button></div>
         <div class="vdefrow">
-          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
-          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-7" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-7" placeholder="Use it..."></div>
         </div>
       </div>
     </div>
     <hr class="div">
     <div class="pblock">
       <div class="phead"><span class="picon">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="sat-tag">SAT: Close Reading</span></div>
-      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(4)" rows="2"></textarea></div>
-      <textarea class="jta" id="t4-wy" placeholder="Device → effect → why it matters..." oninput="as(4)" rows="3"></textarea>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t7-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(7)" rows="2"></textarea></div>
+      <textarea class="jta" id="t7-wy" placeholder="Device → effect → why it matters..." oninput="as(7)" rows="3"></textarea>
     </div>
   </div>
-  <div class="savebar"><span class="saven" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
-  <div class="pgnum">Page 5 of 5</div>
+  <div class="savebar"><span class="saven" id="sv-7">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(7)">Clear</button><button class="savebtn" onclick="save(7)">Save Journal</button></div></div>
+  <div class="pgnum">Page 8 of 8</div>
 </div>
 
-</div><!-- /journal -->
 
+
+</div><!-- /journal -->
 <script>
 const KEY='j10_sat_v1';
 let D={};
@@ -746,7 +939,7 @@ function rvoc(i){
   el.innerHTML=vs.map((v,j)=>`<div class="vcard"><div><div class="vword">${v.w}</div><div class="vpos">${v.p||''}</div><div class="vdef">${v.d||'<em style="color:#bbb">No definition yet</em>'}</div>${v.s?`<div class="vsent">"${v.s}"</div>`:''}</div><button class="vdel" onclick="rmV(${i},${j})">×</button></div>`).join('');
 }
 function updVc(){
-  let t=0;for(let i=0;i<5;i++)t+=((D['b'+i]||{}).v||[]).length;
+  let t=0;for(let i=0;i<8;i++)t+=((D['b'+i]||{}).v||[]).length;
   document.getElementById('vcnt').textContent=t;
 }
 function setSt(i,s,btn){
@@ -763,11 +956,11 @@ function setR(i,v){
   persist();
 }
 function updProg(){
-  let done=0;for(let i=0;i<5;i++)if((D['b'+i]||{}).s==='Finished')done++;
-  const pct=Math.round(done/5*100);
+  let done=0;for(let i=0;i<8;i++)if((D['b'+i]||{}).s==='Finished')done++;
+  const pct=Math.round(done/8*100);
   document.getElementById('pFill').style.width=pct+'%';
   document.getElementById('pPct').textContent=pct+'%';
-  document.getElementById('bcnt').textContent=done+'/5';
+  document.getElementById('bcnt').textContent=done+'/8';
 }
 function sw(n,btn){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
@@ -783,7 +976,7 @@ function as(i){save(i,true);}
 function save(i,silent=false){
   if(!D['b'+i])D['b'+i]={};
   ['p1','p2','p3','p4','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)D['b'+i][k]=el.value;});
-  if(i===4){D['b4'].iT=document.getElementById('iTitle').value;D['b4'].iA=document.getElementById('iAuthor').value;}
+  if(i===7){D['b7'].iT=document.getElementById('iTitle').value;D['b4'].iA=document.getElementById('iAuthor').value;}
   persist();
   if(!silent){const el=document.getElementById(`sv-${i}`);el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2000);}
 }
@@ -806,6 +999,9 @@ function exportTxt(){
     'Of Mice and Men',
     'Night',
     'Their Eyes Were Watching God',
+    'Julius Caesar',
+    'The Autobiography of Malcolm X',
+    "Uncle Tom's Cabin",
     'Independent Reading'
   ];
   for (let i = 0; i < 5; i++) {
@@ -833,7 +1029,7 @@ function exportTxt(){
 function load(){
   try{D=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){D={};}
   ['sName','sSchool','sYear'].forEach(id=>{if(D[id])document.getElementById(id).value=D[id];});
-  for(let i=0;i<5;i++){
+  for(let i=0;i<8;i++){
     const b=D['b'+i]||{};
     ['p1','p2','p3','p4','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el&&b[k])el.value=b[k];});
     if(b.v)rvoc(i);

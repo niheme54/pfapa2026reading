@@ -297,9 +297,12 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 30% 70%,rg
 <div class="tabs">
   <button class="tab active" onclick="sw(0,this)" id="tab-0"><span class="tnum">Book 1</span>Great Gatsby<span class="tck">✓</span></button>
   <button class="tab" onclick="sw(1,this)" id="tab-1"><span class="tnum">Book 2</span>The Crucible<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Book 3A</span>Invisible Man<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Book 3B</span>Handmaid's Tale<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Indep.</span>My Choice<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Choice A</span>Invisible Man<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Choice B</span>Handmaid's Tale<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Choice C</span>Scarlet Letter<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(5,this)" id="tab-5"><span class="tnum">Choice D</span>Between Worlds<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(6,this)" id="tab-6"><span class="tnum">Choice E</span>Beloved<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(7,this)" id="tab-7"><span class="tnum">Indep.</span>My Choice<span class="tck">✓</span></button>
 </div>
 
 <div class="journal">
@@ -630,6 +633,195 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 30% 70%,rg
 ══════════════════════════════════ -->
 <div class="panel" id="p-4">
   <div class="bh">
+    <div><h2>The Scarlet Letter</h2><div class="auth">Nathaniel Hawthorne · 1850 · Choice C</div></div>
+    <span class="badge" style="background:#FFF0F0;color:#8B1A1A;">Puritanism · Sin · Symbolism</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Extended Symbol</span><span class="chip">Allegory</span><span class="chip">Narrator's Stance</span><span class="chip">Diction & Tone</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔴</span><span class="plbl">Prompt 1 · The Letter as Extended Symbol</span><span class="stag">SAT: Symbolism</span></div>
+      <div class="pq">The scarlet "A" begins as a mark of shame but accumulates new meanings as the novel progresses — Able, Angel, Adultery, and more. Trace the letter's symbolic evolution across at least three moments in the novel. For each: what does the letter mean at that point, who assigns that meaning, and how does this shift reflect Hawthorne's argument about the difference between public judgment and private truth?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Extended symbol analysis — tracking how a single image accumulates meaning across a text — is one of the SAT's most sophisticated literary questions. The "A" is the perfect training case because its evolution is deliberate and traceable.</div>
+      <textarea class="jta" id="t4-p1" placeholder="Moment 1: letter means ___ | assigned by: | Moment 2: | Moment 3: | Hawthorne's argument about public judgment vs. private truth:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t4-ev" placeholder="Find the passage where Hester's inner strength is most visible despite her public shame. This is where Hawthorne's argument lives. Quote it: &ldquo; ...&rdquo; (Ch. __)" oninput="as(4)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">⛪</span><span class="plbl">Prompt 2 · The Crucible &amp; The Scarlet Letter: Puritan Hypocrisy</span><span class="stag">SAT: Paired Texts</span></div>
+      <div class="pq">Both The Scarlet Letter and The Crucible are set in Puritan New England and both expose the gap between public religious morality and private human reality. Compare how Hawthorne and Miller each dramatize this hypocrisy. Quote one passage from each. Which portrayal is more damning of Puritan society, and why?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> This is a natural SAT paired-passage setup — two authors, one historical moment, different literary forms (novel vs. drama), same target. The comparison trains the exact analytical move the SAT rewards.</div>
+      <textarea class="jta" id="t4-p2" placeholder="Hawthorne on hypocrisy: &ldquo;...&rdquo; | Miller on hypocrisy: &ldquo;...&rdquo; | Key difference in approach: | More damning: because..." oninput="as(4)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🌲</span><span class="plbl">Prompt 3 · Nature vs. Society</span><span class="stag">SAT: Setting</span></div>
+      <div class="pq">Hawthorne consistently contrasts the forest and the town. The town represents law, judgment, and repression; the forest represents freedom, truth, and danger. Find two scenes — one in each setting — and analyze how Hawthorne uses physical space to carry moral meaning. What does this nature/society contrast argue about where human beings are most truly themselves?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Setting as symbolic space — how a physical environment carries moral or psychological meaning — is a recurring SAT literary analysis concept. Hawthorne uses it more deliberately than almost any other American novelist.</div>
+      <textarea class="jta" id="t4-p3" placeholder="Town scene: &ldquo;...&rdquo; → moral meaning: | Forest scene: &ldquo;...&rdquo; → moral meaning: | What the contrast argues:" oninput="as(4)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-4"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="e.g. ignominy, remorse, anguish" onkeydown="if(event.key==='Enter')addV(4)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo; (Ch. __)" oninput="as(4)" rows="2"></textarea></div>
+      <textarea class="jta" id="t4-wy" placeholder="Device → effect → what Hawthorne achieves with this passage..." oninput="as(4)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
+  <div class="pgnum">Page 5 of 8</div>
+</div>
+
+<div class="panel" id="p-5">
+  <div class="bh">
+    <div><h2>Between the World and Me</h2><div class="auth">Ta-Nehisi Coates · 2015 · Choice D</div></div>
+    <span class="badge" style="background:#EEF3FA;color:#1E3A5C;">Essay · Memoir · Letter Form</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Rhetorical Analysis</span><span class="chip">Letter Form</span><span class="chip">Author's Purpose</span><span class="chip">Argument</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(5,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(5,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(5,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-5"><span class="star" onclick="setR(5,1)">★</span><span class="star" onclick="setR(5,2)">★</span><span class="star" onclick="setR(5,3)">★</span><span class="star" onclick="setR(5,4)">★</span><span class="star" onclick="setR(5,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">✉️</span><span class="plbl">Prompt 1 · The Letter Form as Argument</span><span class="stag">SAT: Structure</span></div>
+      <div class="pq">Coates writes as a letter to his teenage son Samori. Why a letter? What does addressing a specific person — rather than writing an essay to the general public — allow Coates to do that a traditional argument format wouldn't? Find two moments where the intimacy of the letter form carries the argument more powerfully than statistics or abstract claims could.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT asks how an author's structural choice — form, audience, point of view — shapes the argument's effectiveness. The letter is a form choice, and Coates's choice is deliberate and analyzable.</div>
+      <textarea class="jta" id="t5-p1" placeholder="What the letter form allows: | Moment 1 where intimacy carries the argument: &ldquo;...&rdquo; | Moment 2: | Why this works better than statistics:" oninput="as(5)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t5-ev" placeholder="Find Coates's central argument about the Black body in America — the line that most directly states what he is claiming. Quote it: &ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔗</span><span class="plbl">Prompt 2 · Coates &amp; The Great Gatsby: The American Dream</span><span class="stag">SAT: Synthesis</span></div>
+      <div class="pq">Fitzgerald exposes the American Dream as a beautiful lie in 1925; Coates dissects what that lie has always meant for Black Americans in 2015. Compare how each author attacks the American Dream myth. Quote one passage from each. What does reading them 90 years apart reveal about how the promise of America functions differently depending on who is doing the dreaming?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Paired-passage synthesis across a long time gap is a classic SAT move — the contrast in historical moment is part of the argument. What stays the same across 90 years is as significant as what changes.</div>
+      <textarea class="jta" id="t5-p2" placeholder="Fitzgerald: &ldquo;...&rdquo; | Coates: &ldquo;...&rdquo; | What Fitzgerald sees: | What Coates adds: | What 90 years reveals:" oninput="as(5)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">💪</span><span class="plbl">Prompt 3 · The Body as Central Metaphor</span><span class="stag">SAT: Extended Metaphor</span></div>
+      <div class="pq">Coates returns again and again to the physical body — its vulnerability, its beauty, its meaning under threat. Identify three moments where the body is central to his argument. For each: what is literally happening, and what larger claim does Coates make through this physical reality? What does grounding his argument in the body accomplish that abstract language about "rights" or "justice" couldn't?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Extended metaphor — a single image or concept that recurs and deepens across a text — is tested on the SAT. Coates's "body" is a masterclass in how to build an argument through a sustained, concrete metaphor.</div>
+      <textarea class="jta" id="t5-p3" placeholder="Body moment 1: literally → argues: | Moment 2: | Moment 3: | Why the body works better than abstraction:" oninput="as(5)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-5"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-5" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(5)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-5" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(5)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-5" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-5" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t5-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+      <textarea class="jta" id="t5-wy" placeholder="Device → effect → what Coates achieves with this passage..." oninput="as(5)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-5">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(5)">Clear</button><button class="savebtn" onclick="save(5)">Save Journal</button></div></div>
+  <div class="pgnum">Page 6 of 8</div>
+</div>
+
+<div class="panel" id="p-6">
+  <div class="bh">
+    <div><h2>Beloved</h2><div class="auth">Toni Morrison · 1987 · Choice E</div></div>
+    <span class="badge" style="background:#F5F0FB;color:#4A2080;">Memory · Trauma · Freedom</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Non-Linear Narrative</span><span class="chip">Complex Inference</span><span class="chip">Imagery</span><span class="chip">Ambiguity</span></div>
+  <div class="srow">
+    <span class="slbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(6,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(6,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(6,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-6"><span class="star" onclick="setR(6,1)">★</span><span class="star" onclick="setR(6,2)">★</span><span class="star" onclick="setR(6,3)">★</span><span class="star" onclick="setR(6,4)">★</span><span class="star" onclick="setR(6,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">👻</span><span class="plbl">Prompt 1 · Memory as Haunting</span><span class="stag">SAT: Analysis</span></div>
+      <div class="pq">Morrison opens with "124 was spiteful." The house is haunted — literally and metaphorically. Analyze how Morrison uses the supernatural as a way of representing trauma and repressed memory. Find two moments where the ghost/Beloved functions as more than a plot device. What is Morrison arguing about what happens to people — and communities — when they cannot process their trauma?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> When a text uses the supernatural, the SAT always asks what it represents beyond its literal function. Beloved is the definitive example of supernatural-as-psychological-argument.</div>
+      <textarea class="jta" id="t6-p1" placeholder="Moment 1: Beloved literally does ___ → represents: | Moment 2: | Morrison's argument about unprocessed trauma:" oninput="as(6)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t6-ev" placeholder="Find the passage that most directly expresses Sethe's internal conflict — the weight of her choice and what it cost her. Quote it: &ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🌊</span><span class="plbl">Prompt 2 · Non-Linear Time & the SAT Reader</span><span class="stag">SAT: Structure</span></div>
+      <div class="pq">Morrison refuses to tell the story in chronological order — the past keeps erupting into the present. Identify three moments where the narrative jumps in time. For each: what do we learn from that flashback or memory, and what would be lost if Morrison had told it in sequence? What is she arguing about how trauma actually works in the human mind?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Structure questions — why does the author organize the narrative this way? — appear on every SAT. Non-linear structure is always a deliberate argument about how time, memory, or consciousness works.</div>
+      <textarea class="jta" id="t6-p2" placeholder="Jump 1: we learn ___ | lost if sequential: | Jump 2: | Jump 3: | Morrison's argument about how trauma works:" oninput="as(6)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔗</span><span class="plbl">Prompt 3 · Morrison, Coates &amp; Ellison: The Black American Experience</span><span class="stag">SAT: Synthesis</span></div>
+      <div class="pq">Toni Morrison (1987), Ta-Nehisi Coates (2015), and Ralph Ellison (1952) each write about the experience of being Black in America, but through radically different forms — novel, essay-letter, and satirical fiction. Compare one specific theme across any two of these three works. Quote both. What does the form each author chose tell you about what they believed literature could accomplish?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> This is the 11th grade capstone synthesis: comparing how two authors handle the same theme through different literary forms. Form is always a choice — and a choice is always an argument.</div>
+      <textarea class="jta" id="t6-p3" placeholder="Shared theme: | Author 1: &ldquo;...&rdquo; form: | Author 2: &ldquo;...&rdquo; form: | What each form accomplishes: | What form reveals about each author's purpose:" oninput="as(6)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-6"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-6" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(6)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-6" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(6)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-6" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-6" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t6-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+      <textarea class="jta" id="t6-wy" placeholder="Device → effect → what Morrison achieves with this passage..." oninput="as(6)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-6">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(6)">Clear</button><button class="savebtn" onclick="save(6)">Save Journal</button></div></div>
+  <div class="pgnum">Page 7 of 8</div>
+</div>
+
+<div class="panel" id="p-7">
+  <div class="bh">
     <div><h2 id="itd">Independent Reading</h2><div class="auth" id="ita">Between the World and Me · Beloved · or your approved title</div></div>
     <span class="badge" style="background:#F5F5F0;color:#3A4A3C;">My Choice</span>
   </div>
@@ -642,60 +834,61 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 30% 70%,rg
   <div class="srow">
     <span class="slbl">Status</span>
     <div class="sbtns">
-      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
-      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#3A4A5C;">Reading</button>
-      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
+      <button class="sbtn" onclick="setSt(7,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(7,'Reading',this)" style="color:#3A4A5C;">Reading</button>
+      <button class="sbtn" onclick="setSt(7,'Finished',this)" style="color:#4A6B52;">✓ Finished</button>
     </div>
-    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+    <div class="stars" id="stars-7"><span class="star" onclick="setR(7,1)">★</span><span class="star" onclick="setR(7,2)">★</span><span class="star" onclick="setR(7,3)">★</span><span class="star" onclick="setR(7,4)">★</span><span class="star" onclick="setR(7,5)">★</span></div>
   </div>
   <div class="page">
     <div class="pb">
       <div class="ph"><span class="pico">🎯</span><span class="plbl">Prompt 1 · Central Claim + 3-Point Evidence</span><span class="stag">SAT: Evidence</span></div>
       <div class="pq">State your book's central argument in one sentence. Then build three-point support: for each piece of evidence, copy the exact quote, then write one sentence explaining the connection to your claim. This is CEE — the core SAT analytical writing structure.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> Claim → Evidence → Explanation (CEE) is the single most important writing pattern for the SAT. Mastering it here means you can apply it anywhere.</div>
-      <textarea class="jta" id="t4-p1" placeholder="Central claim: | E1: &ldquo;...&rdquo; → Because: | E2: → Because: | E3: → Because:" oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p1" placeholder="Central claim: | E1: &ldquo;...&rdquo; → Because: | E2: → Because: | E3: → Because:" oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">🔗</span><span class="plbl">Prompt 2 · Synthesis: Your Book + American Literature</span><span class="stag">SAT: Synthesis</span></div>
       <div class="pq">Synthesize your independent book with one of the required texts. What shared theme connects them? Find a quote from each that speaks to that theme — then identify the most important difference in how each author handles it. Which author's approach is more persuasive, and why?</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> Paired-passage synthesis — comparing how two authors develop a shared idea — is the highest-difficulty SAT Reading question. This prompt is direct preparation.</div>
-      <textarea class="jta" id="t4-p2" placeholder="Shared theme: | My book: &ldquo;...&rdquo; | Required text: &ldquo;...&rdquo; | Key difference: | More persuasive: because:" oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p2" placeholder="Shared theme: | My book: &ldquo;...&rdquo; | Required text: &ldquo;...&rdquo; | Key difference: | More persuasive: because:" oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">🖊️</span><span class="plbl">Prompt 3 · Full SAT Practice Essay (3 Paragraphs)</span><span class="stag">SAT: Essay</span></div>
       <div class="pq">Write a complete 3-paragraph analytical essay about your book. ¶1: Introduce the book, state a specific analytical thesis (not just a topic). ¶2: Develop your thesis with a direct quote and a full CEE explanation. ¶3: Address significance — what does this theme reveal about the human experience beyond this specific book? Target: 250–300 words. Precision over length.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> This is a full SAT-style analytical essay. The key: specificity in your thesis, direct evidence, and a "so what" conclusion that shows you understand the text's larger significance.</div>
-      <textarea class="jta" id="t4-p3" placeholder="¶1 (Introduction + thesis): | ¶2 (Evidence + analysis): | ¶3 (Significance / so what):" oninput="as(4)" rows="9"></textarea>
+      <textarea class="jta" id="t7-p3" placeholder="¶1 (Introduction + thesis): | ¶2 (Evidence + analysis): | ¶3 (Significance / so what):" oninput="as(7)" rows="9"></textarea>
     </div>
     <hr class="div">
     <div class="vsec">
       <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
-      <div class="vcards" id="vc-4"></div>
+      <div class="vcards" id="vc-7"></div>
       <div class="vadd">
-        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(4)"></div>
-        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
-        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-7" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(7)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-7" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(7)">+ Add</button></div>
         <div class="vdr">
-          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
-          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-7" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-7" placeholder="Use it..."></div>
         </div>
       </div>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
-      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(4)" rows="2"></textarea></div>
-      <textarea class="jta" id="t4-wy" placeholder="Device → effect → contribution to the author's argument..." oninput="as(4)" rows="3"></textarea>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t7-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(7)" rows="2"></textarea></div>
+      <textarea class="jta" id="t7-wy" placeholder="Device → effect → contribution to the author's argument..." oninput="as(7)" rows="3"></textarea>
     </div>
   </div>
-  <div class="savebar"><span class="savn" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
-  <div class="pgnum">Page 5 of 5</div>
+  <div class="savebar"><span class="savn" id="sv-7">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(7)">Clear</button><button class="savebtn" onclick="save(7)">Save Journal</button></div></div>
+  <div class="pgnum">Page 8 of 8</div>
 </div>
 
-</div><!-- /journal -->
 
+
+</div><!-- /journal -->
 <script>
 const KEY='j11_sat_v1';
 let D={};
@@ -737,7 +930,7 @@ function rvoc(i){
   const vs=(D['b'+i]||{}).v||[];
   el.innerHTML=vs.map((v,j)=>`<div class="vc"><div><div class="vw">${v.w}</div><div class="vps">${v.p||''}</div><div class="vd">${v.d||'<em style="color:#bbb">No definition yet</em>'}</div>${v.s?`<div class="vs2">"${v.s}"</div>`:''}</div><button class="vdel" onclick="rmV(${i},${j})">×</button></div>`).join('');
 }
-function updVc(){let t=0;for(let i=0;i<5;i++)t+=((D['b'+i]||{}).v||[]).length;document.getElementById('vcnt').textContent=t;}
+function updVc(){let t=0;for(let i=0;i<8;i++)t+=((D['b'+i]||{}).v||[]).length;document.getElementById('vcnt').textContent=t;}
 function setSt(i,s,btn){
   if(!D['b'+i])D['b'+i]={};D['b'+i].s=s;
   document.querySelectorAll(`#p-${i} .sbtn`).forEach(b=>b.classList.remove('on'));btn.classList.add('on');
@@ -745,14 +938,14 @@ function setSt(i,s,btn){
   updProg();persist();
 }
 function setR(i,v){if(!D['b'+i])D['b'+i]={};D['b'+i].r=v;document.querySelectorAll(`#stars-${i} .star`).forEach((s,j)=>s.classList.toggle('lit',j<v));persist();}
-function updProg(){let done=0;for(let i=0;i<5;i++)if((D['b'+i]||{}).s==='Finished')done++;const pct=Math.round(done/5*100);document.getElementById('pFill').style.width=pct+'%';document.getElementById('pPct').textContent=pct+'%';document.getElementById('bcnt').textContent=done+'/5';}
+function updProg(){let done=0;for(let i=0;i<8;i++)if((D['b'+i]||{}).s==='Finished')done++;const pct=Math.round(done/8*100);document.getElementById('pFill').style.width=pct+'%';document.getElementById('pPct').textContent=pct+'%';document.getElementById('bcnt').textContent=done+'/8';}
 function sw(n,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.getElementById(`p-${n}`).classList.add('active');btn.classList.add('active');}
 function updI(){document.getElementById('itd').textContent=document.getElementById('iT').value||'Independent Reading';document.getElementById('ita').textContent=document.getElementById('iA').value||'Between the World and Me · Beloved · or your approved title';}
 function as(i){save(i,true);}
 function save(i,silent=false){
   if(!D['b'+i])D['b'+i]={};
   ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)D['b'+i][k]=el.value;});
-  if(i===4){D['b4'].iT=document.getElementById('iT').value;D['b4'].iA=document.getElementById('iA').value;}
+  if(i===7){D['b7'].iT=document.getElementById('iT').value;D['b4'].iA=document.getElementById('iA').value;}
   persist();if(!silent){const el=document.getElementById(`sv-${i}`);el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
 }
 function clr(i){if(!confirm('Clear all entries for this book?'))return;const keep={s:D['b'+i]?.s,r:D['b'+i]?.r,v:[]};D['b'+i]=keep;['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)el.value='';});rvoc(i);updVc();persist();}
@@ -762,8 +955,8 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){}}
 function exportTxt(){
   const name=D.sN||'Student';
   let out=`11TH GRADE SUMMER READING JOURNAL — SAT EDITION\nStudent: ${name} | School: ${D.sSc||''} | Summer: ${D.sYr||'2026'}\n${'='.repeat(60)}\n\n`;
-  const books=['The Great Gatsby','The Crucible','Invisible Man','The Handmaid\'s Tale','Independent Reading'];
-  for(let i=0;i<5;i++){
+  const books=['The Great Gatsby','The Crucible','Invisible Man','The Handmaid\'s Tale','The Scarlet Letter','Between the World and Me','Beloved','Independent Reading'];
+  for(let i=0;i<8;i++){
     const b=D['b'+i]||{};
     out+=`BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
     if(b.p1)out+=`\nPROMPT 1:\n${b.p1}\n`;
@@ -782,7 +975,7 @@ function exportTxt(){
 function load(){
   try{D=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){D={};}
   ['sN','sSc','sYr'].forEach(id=>{if(D[id])document.getElementById(id).value=D[id];});
-  for(let i=0;i<5;i++){
+  for(let i=0;i<8;i++){
     const b=D['b'+i]||{};
     ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el&&b[k])el.value=b[k];});
     if(b.v)rvoc(i);

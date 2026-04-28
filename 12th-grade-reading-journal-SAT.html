@@ -296,9 +296,12 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 50% 0%,rgb
 <div class="tabs">
   <button class="tab active" onclick="sw(0,this)" id="tab-0"><span class="tnum">Book 1</span>Hamlet<span class="tck">✓</span></button>
   <button class="tab" onclick="sw(1,this)" id="tab-1"><span class="tnum">Book 2</span>Crime & Punishment<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Book 3A</span>Things Fall Apart<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Book 3B</span>100 Yrs Solitude<span class="tck">✓</span></button>
-  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Indep.</span>My Choice<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(2,this)" id="tab-2"><span class="tnum">Choice A</span>Things Fall Apart<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(3,this)" id="tab-3"><span class="tnum">Choice B</span>100 Yrs Solitude<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(4,this)" id="tab-4"><span class="tnum">Choice C</span>Macbeth<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(5,this)" id="tab-5"><span class="tnum">Choice D</span>Brothers Karamazov<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(6,this)" id="tab-6"><span class="tnum">Choice E</span>The Road<span class="tck">✓</span></button>
+  <button class="tab" onclick="sw(7,this)" id="tab-7"><span class="tnum">Indep.</span>My Choice<span class="tck">✓</span></button>
 </div>
 
 <div class="journal">
@@ -323,7 +326,7 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 50% 0%,rgb
   </div>
   <div class="page">
     <div class="pb">
-      <div class="ph"><span class="pico">😥</span><span class="plbl">Prompt 1 · Soliloquy as Argument</span><span class="stag">SAT: Reading</span></div>
+      <div class="ph"><span class="pico">💀</span><span class="plbl">Prompt 1 · Soliloquy as Argument</span><span class="stag">SAT: Reading</span></div>
       <div class="pq">"To be, or not to be" is not a question about suicide — it is a philosophical argument about the cost of consciousness. Break it down as you would a SAT argument passage: What is Hamlet's central claim? What evidence does he offer (his examples of suffering)? What is his conclusion, and does the logic hold?</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> The SAT includes philosophical and argumentative passages. A soliloquy is an argument made visible — dissecting it trains the exact same analytical move: claim → evidence → conclusion → evaluate.</div>
       <textarea class="jta" id="t0-p1" placeholder="Hamlet's central claim: | Evidence (examples of suffering): | Conclusion: | Does the logic hold? Because:" oninput="as(0)" rows="5"></textarea>
@@ -629,6 +632,195 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 50% 0%,rgb
 ══════════════════════════ -->
 <div class="panel" id="p-4">
   <div class="bh">
+    <div><h2>Macbeth</h2><div class="auth">William Shakespeare · c. 1606 · Choice C</div></div>
+    <span class="badge" style="background:#F5F0FF;color:#3A1A6A;">Tragedy · Ambition · Moral Collapse</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Soliloquy Analysis</span><span class="chip">Motif Tracking</span><span class="chip">Argument</span><span class="chip">Language Precision</span></div>
+  <div class="srow">
+    <span class="srwlbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#2A3848;">Reading</button>
+      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#3A5C40;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🗡️</span><span class="plbl">Prompt 1 · Blood as Motif</span><span class="stag">SAT: Motif</span></div>
+      <div class="pq">Blood appears over 40 times in Macbeth — as guilt, ambition, violence, and consequence. Trace the motif across three moments: before the murder of Duncan, immediately after, and near the play's end. How does the meaning of blood shift? What is Shakespeare arguing through this evolution about what guilt does to a human consciousness over time?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Motif tracking — following a recurring image and showing how its meaning evolves — is one of the most sophisticated SAT literary analysis skills. Blood in Macbeth is the definitive training case.</div>
+      <textarea class="jta" id="t4-p1" placeholder="Blood before Duncan's murder: &ldquo;...&rdquo; → means: | Immediately after: &ldquo;...&rdquo; → means: | Near the end: &ldquo;...&rdquo; → means: | What Shakespeare argues about guilt:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t4-ev" placeholder="Find Lady Macbeth's most revealing line — the moment where her strength cracks and her guilt surfaces. This is where Shakespeare argues that no one escapes consequence. Quote it: &ldquo; ...&rdquo; (Act __, Scene __)" oninput="as(4)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">👑</span><span class="plbl">Prompt 2 · Macbeth &amp; Hamlet: Two Shakespearean Heroes</span><span class="stag">SAT: Paired Texts</span></div>
+      <div class="pq">Hamlet cannot act despite having every reason to. Macbeth cannot stop acting despite knowing he should. Compare these two tragic heroes as studies in opposite failure modes of the human will. Quote one soliloquy passage from each. What does placing them side by side reveal about Shakespeare's understanding of why human beings destroy themselves?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Comparing two works by the same author is a high-value SAT task — it reveals what the author consistently believes rather than what one text argues. Same playwright, opposite protagonists, same outcome: tragedy.</div>
+      <textarea class="jta" id="t4-p2" placeholder="Hamlet's failure mode: &ldquo;...&rdquo; | Macbeth's failure mode: &ldquo;...&rdquo; | What they share: | What reading both reveals about Shakespeare's view of human self-destruction:" oninput="as(4)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🌑</span><span class="plbl">Prompt 3 · The Witches: Fate or Self-Fulfilling Prophecy?</span><span class="stag">SAT: Argument</span></div>
+      <div class="pq">The witches prophesy Macbeth's rise — but do they cause it? Build the case that Macbeth was always going to make these choices and the witches merely gave him permission. Then build the opposite case: without the witches, he would have stayed loyal. Use evidence from the text for both. Which argument does the play ultimately support, and what does that mean for the question of moral responsibility?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Fate vs. free will is a classic SAT argument evaluation prompt. The skill is building both cases rigorously from the same text, then evaluating which is better supported — not just picking the one that feels right.</div>
+      <textarea class="jta" id="t4-p3" placeholder="Case for fate (witches cause it): evidence: | Case for free will (always his choice): evidence: | Which the play supports: | Moral responsibility implications:" oninput="as(4)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-4"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="e.g. equivocate, harbinger, usurp" onkeydown="if(event.key==='Enter')addV(4)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact lines:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo; (Act __, Scene __)" oninput="as(4)" rows="2"></textarea></div>
+      <textarea class="jta" id="t4-wy" placeholder="Device → effect → what Shakespeare achieves with these specific words..." oninput="as(4)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
+  <div class="pgnum">Page 5 of 8</div>
+</div>
+
+<div class="panel" id="p-5">
+  <div class="bh">
+    <div><h2>The Brothers Karamazov</h2><div class="auth">Fyodor Dostoevsky · 1880 · Choice D</div></div>
+    <span class="badge" style="background:#F8F0FF;color:#3A1060;">Philosophy · Faith · Family</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Philosophical Argument</span><span class="chip">Dialogue as Debate</span><span class="chip">Complex Inference</span><span class="chip">Counterargument</span></div>
+  <div class="srow">
+    <span class="srwlbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(5,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(5,'Reading',this)" style="color:#2A3848;">Reading</button>
+      <button class="sbtn" onclick="setSt(5,'Finished',this)" style="color:#3A5C40;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-5"><span class="star" onclick="setR(5,1)">★</span><span class="star" onclick="setR(5,2)">★</span><span class="star" onclick="setR(5,3)">★</span><span class="star" onclick="setR(5,4)">★</span><span class="star" onclick="setR(5,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🤔</span><span class="plbl">Prompt 1 · The Grand Inquisitor: Argument Analysis</span><span class="stag">SAT: Argument</span></div>
+      <div class="pq">The "Grand Inquisitor" chapter is one of the most famous philosophical arguments in all of literature. The Inquisitor argues that human beings cannot bear the burden of freedom — that they need miracle, mystery, and authority to survive. Reconstruct his argument formally: What is his claim? What evidence does he offer? What is his conclusion? Then write Alyosha's (or Christ's silent) counterargument.</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Reconstructing a formal argument — claim, evidence, conclusion — and then articulating its best counterargument is the highest-level SAT analytical skill. The Grand Inquisitor is one of the most rigorous training cases in world literature.</div>
+      <textarea class="jta" id="t5-p1" placeholder="Inquisitor's claim: | Evidence (what he observes about human nature): | Conclusion: | Best counterargument (Alyosha/Christ): | Which is more persuasive, and why:" oninput="as(5)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t5-ev" placeholder="Find the line where Dostoevsky most clearly states — through any character — what he believes about the human capacity for both good and evil. Quote it: &ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">👨‍👨‍👦</span><span class="plbl">Prompt 2 · Three Brothers, Three Philosophies</span><span class="stag">SAT: Character Analysis</span></div>
+      <div class="pq">Dmitri, Ivan, and Alyosha represent three distinct answers to the question of how a person should live: passion, reason, and faith. For each brother: state his philosophy in one sentence, find a quote that embodies it, and identify the flaw or cost that Dostoevsky builds into it. What is the novel arguing about which — if any — of these three ways of living is sufficient?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Tracking how different characters embody different philosophical positions — and evaluating which the author endorses — is an advanced SAT inference skill. Dostoevsky always argues through character, not directly.</div>
+      <textarea class="jta" id="t5-p2" placeholder="Dmitri — philosophy: | quote: | flaw: | Ivan — philosophy: | quote: | flaw: | Alyosha — philosophy: | quote: | flaw: | What the novel argues:" oninput="as(5)" rows="7"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔗</span><span class="plbl">Prompt 3 · Dostoevsky vs. Dostoevsky: Brothers Karamazov &amp; Crime and Punishment</span><span class="stag">SAT: Same-Author Synthesis</span></div>
+      <div class="pq">Both novels are by Dostoevsky, written 14 years apart, and both ask whether a human being can commit a moral crime and survive it psychologically. Compare Raskolnikov and Ivan Karamazov as two different case studies in the cost of placing intellect above conscience. Quote one passage from each. What does Dostoevsky believe — across both novels — about the relationship between reason, morality, and suffering?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Comparing two works by the same author across time is among the most sophisticated SAT analytical moves — it reveals not just what the author argues, but what they consistently believe across their body of work.</div>
+      <textarea class="jta" id="t5-p3" placeholder="Raskolnikov: &ldquo;...&rdquo; | Ivan: &ldquo;...&rdquo; | What they share: | Key difference: | What Dostoevsky consistently believes across both novels:" oninput="as(5)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-5"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-5" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(5)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-5" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(5)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-5" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-5" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t5-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(5)" rows="2"></textarea></div>
+      <textarea class="jta" id="t5-wy" placeholder="Device → effect → what Dostoevsky achieves with this passage..." oninput="as(5)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-5">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(5)">Clear</button><button class="savebtn" onclick="save(5)">Save Journal</button></div></div>
+  <div class="pgnum">Page 6 of 8</div>
+</div>
+
+<div class="panel" id="p-6">
+  <div class="bh">
+    <div><h2>The Road</h2><div class="auth">Cormac McCarthy · 2006 · Choice E</div></div>
+    <span class="badge" style="background:#F5F5F0;color:#2A2A20;">Post-Apocalyptic · Survival · Love</span>
+  </div>
+  <div class="skrow"><span class="sklbl">SAT Skills:</span><span class="chip">Sparse Style</span><span class="chip">Symbolism</span><span class="chip">Argument from Absence</span><span class="chip">Tone</span></div>
+  <div class="srow">
+    <span class="srwlbl">Status</span>
+    <div class="sbtns">
+      <button class="sbtn" onclick="setSt(6,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(6,'Reading',this)" style="color:#2A3848;">Reading</button>
+      <button class="sbtn" onclick="setSt(6,'Finished',this)" style="color:#3A5C40;">✓ Finished</button>
+    </div>
+    <div class="stars" id="stars-6"><span class="star" onclick="setR(6,1)">★</span><span class="star" onclick="setR(6,2)">★</span><span class="star" onclick="setR(6,3)">★</span><span class="star" onclick="setR(6,4)">★</span><span class="star" onclick="setR(6,5)">★</span></div>
+  </div>
+  <div class="page">
+    <div class="pb">
+      <div class="ph"><span class="pico">🔥</span><span class="plbl">Prompt 1 · McCarthy's Style as Argument</span><span class="stag">SAT: Style Analysis</span></div>
+      <div class="pq">McCarthy removes almost all punctuation, rarely uses characters' names, strips description to its bare minimum, and avoids quotation marks. Every stylistic choice is a deliberate argument. For each of these four techniques: find a passage where it operates, describe its effect on the reader, and explain what McCarthy is arguing about the world of the novel through this style. What does the form of the prose say about survival?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Style analysis — how the specific way a text is written carries meaning — is one of the SAT's most nuanced analytical demands. McCarthy is the extreme test case: his style is more radical than almost any other contemporary writer.</div>
+      <textarea class="jta" id="t6-p1" placeholder="No punctuation: effect: | No names: effect: | Stripped description: effect: | No quotation marks: effect: | What style argues about survival:" oninput="as(6)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="evbox" style="margin-bottom:20px;"><div class="evlbl">📌 Cite the Text — SAT: Evidence</div><textarea class="qta" id="t6-ev" placeholder="Find the moment that most clearly states what the man is fighting to preserve — not just survival, but meaning. Quote it: &ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🕯️</span><span class="plbl">Prompt 2 · Carrying the Fire</span><span class="stag">SAT: Extended Symbol</span></div>
+      <div class="pq">"We're carrying the fire" — the man repeats this to the boy throughout the novel. The fire is never fully explained. Trace this symbol across three moments. For each: what does "the fire" seem to mean in context? Who has it and who doesn't? By the end, what is McCarthy arguing that "the fire" represents — and what does it mean that the boy carries it forward after his father dies?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> Tracking an undefined symbol across a text — one the author never explains — is the ultimate close-reading challenge. The SAT rewards readers who can build meaning from patterns, not just definitions.</div>
+      <textarea class="jta" id="t6-p2" placeholder="Moment 1: &ldquo;...&rdquo; → fire means: | Moment 2: | Moment 3: | What fire represents by the end: | What the boy carrying it forward means:" oninput="as(6)" rows="5"></textarea>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">🌍</span><span class="plbl">Prompt 3 · The Road &amp; World Literature: What Survives?</span><span class="stag">SAT: Synthesis</span></div>
+      <div class="pq">The Road asks what is worth preserving when everything else is gone. Compare McCarthy's answer to one other book from this year's list — Shakespeare, Dostoevsky, Achebe, or García Márquez. What does each author believe is essentially, irreducibly human? Quote both. What does reading a 21st-century American apocalypse novel alongside a work of classical world literature reveal about what humanity has always valued most?</div>
+      <div class="ptip">💡 <strong>SAT Skill:</strong> This is your senior capstone synthesis — connecting contemporary and classical literature around a shared philosophical question. The ability to read across centuries and cultures is what the SAT's hardest passages demand.</div>
+      <textarea class="jta" id="t6-p3" placeholder="McCarthy: &ldquo;...&rdquo; what he says survives: | Other author: &ldquo;...&rdquo; what they say survives: | What both together reveal about what humanity has always valued:" oninput="as(6)" rows="6"></textarea>
+    </div>
+    <hr class="div">
+    <div class="vsec">
+      <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
+      <div class="vcards" id="vc-6"></div>
+      <div class="vadd">
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-6" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(6)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-6" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(6)">+ Add</button></div>
+        <div class="vdr">
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-6" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-6" placeholder="Use it..."></div>
+        </div>
+      </div>
+    </div>
+    <hr class="div">
+    <div class="pb">
+      <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t6-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(6)" rows="2"></textarea></div>
+      <textarea class="jta" id="t6-wy" placeholder="Device → effect → what McCarthy achieves with this passage..." oninput="as(6)" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="savebar"><span class="savn" id="sv-6">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(6)">Clear</button><button class="savebtn" onclick="save(6)">Save Journal</button></div></div>
+  <div class="pgnum">Page 7 of 8</div>
+</div>
+
+<div class="panel" id="p-7">
+  <div class="bh">
     <div><h2 id="itd">Independent Reading</h2><div class="auth" id="ita">Brothers Karamazov · The Road · or your approved title</div></div>
     <span class="badge" style="background:#F8F8F4;color:#3A3A2A;">Senior Choice</span>
   </div>
@@ -641,60 +833,61 @@ body{background:var(--bg);background-image:radial-gradient(ellipse at 50% 0%,rgb
   <div class="srow">
     <span class="srwlbl">Status</span>
     <div class="sbtns">
-      <button class="sbtn" onclick="setSt(4,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
-      <button class="sbtn" onclick="setSt(4,'Reading',this)" style="color:#2A3848;">Reading</button>
-      <button class="sbtn" onclick="setSt(4,'Finished',this)" style="color:#3A5C40;">✓ Finished</button>
+      <button class="sbtn" onclick="setSt(7,'Not Started',this)" style="color:#9C8E80;">Not Started</button>
+      <button class="sbtn" onclick="setSt(7,'Reading',this)" style="color:#2A3848;">Reading</button>
+      <button class="sbtn" onclick="setSt(7,'Finished',this)" style="color:#3A5C40;">✓ Finished</button>
     </div>
-    <div class="stars" id="stars-4"><span class="star" onclick="setR(4,1)">★</span><span class="star" onclick="setR(4,2)">★</span><span class="star" onclick="setR(4,3)">★</span><span class="star" onclick="setR(4,4)">★</span><span class="star" onclick="setR(4,5)">★</span></div>
+    <div class="stars" id="stars-7"><span class="star" onclick="setR(7,1)">★</span><span class="star" onclick="setR(7,2)">★</span><span class="star" onclick="setR(7,3)">★</span><span class="star" onclick="setR(7,4)">★</span><span class="star" onclick="setR(7,5)">★</span></div>
   </div>
   <div class="page">
     <div class="pb">
       <div class="ph"><span class="pico">🎯</span><span class="plbl">Prompt 1 · The Author's Central Argument</span><span class="stag">SAT: Argument</span></div>
       <div class="pq">What is your author's central argument about human existence? State it in one sentence. Then build the case as the author builds it: identify the three most important pieces of evidence (scenes, images, passages) and explain precisely how each one develops the argument. This is full CEE at the senior level.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> At the senior level, the SAT expects you to identify not just theme but authorial argument — the specific claim about human experience the text is making. This is the highest analytical register.</div>
-      <textarea class="jta" id="t4-p1" placeholder="Central argument: | Evidence 1: &ldquo;...&rdquo; → develops argument by: | Evidence 2: | Evidence 3:" oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p1" placeholder="Central argument: | Evidence 1: &ldquo;...&rdquo; → develops argument by: | Evidence 2: | Evidence 3:" oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">🌐</span><span class="plbl">Prompt 2 · World Literature Synthesis</span><span class="stag">SAT: Synthesis</span></div>
       <div class="pq">This is your senior synthesis exercise. Connect your independent book to two books from this year's list — one thematic connection, one contrast. Quote all three books. Then answer: what does reading these books together reveal that none of them could reveal alone?</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> Multi-text synthesis — finding what three sources together reveal — is the most advanced SAT reading skill and the foundation of college-level literary study. This is where you're headed.</div>
-      <textarea class="jta" id="t4-p2" placeholder="Book 1 connection: &ldquo;...&rdquo; | Book 2 contrast: &ldquo;...&rdquo; | My book: &ldquo;...&rdquo; | What all three together reveal:" oninput="as(4)" rows="6"></textarea>
+      <textarea class="jta" id="t7-p2" placeholder="Book 1 connection: &ldquo;...&rdquo; | Book 2 contrast: &ldquo;...&rdquo; | My book: &ldquo;...&rdquo; | What all three together reveal:" oninput="as(7)" rows="6"></textarea>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">🖊️</span><span class="plbl">Prompt 3 · Senior Analytical Essay (4 Paragraphs)</span><span class="stag">SAT: College-Level Essay</span></div>
       <div class="pq">Write a four-paragraph analytical essay. ¶1: Introduce the book, its context, and your specific analytical thesis (an arguable claim, not just a topic). ¶2: First supporting point — direct quote + full analysis (explain the how and the why, not just the what). ¶3: Second supporting point — different technique or angle, direct quote + analysis. ¶4: Conclusion that explains the book's significance beyond itself — why does this argument matter for how we understand the human experience? Target: 320–400 words. This is your college essay warm-up.</div>
       <div class="ptip">💡 <strong>SAT Skill:</strong> This is a full SAT-level analytical essay — the kind that earns top scores. Specificity, direct evidence, and a "so what" conclusion that transcends the text are what distinguish a strong essay from an adequate one.</div>
-      <textarea class="jta" id="t4-p3" placeholder="¶1 — Intro + thesis: | ¶2 — First supporting argument + quote + analysis: | ¶3 — Second argument + quote + analysis: | ¶4 — Significance / why this matters beyond the book:" oninput="as(4)" rows="10"></textarea>
+      <textarea class="jta" id="t7-p3" placeholder="¶1 — Intro + thesis: | ¶2 — First supporting argument + quote + analysis: | ¶3 — Second argument + quote + analysis: | ¶4 — Significance / why this matters beyond the book:" oninput="as(7)" rows="10"></textarea>
     </div>
     <hr class="div">
     <div class="vsec">
       <div class="ph"><span class="pico">📖</span><span class="plbl">SAT Vocabulary Builder</span><span class="stag">SAT: Words in Context</span></div>
-      <div class="vcards" id="vc-4"></div>
+      <div class="vcards" id="vc-7"></div>
       <div class="vadd">
-        <div class="vig"><label>Word</label><input class="vinp" id="vw-4" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(4)"></div>
-        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-4" placeholder="adj / n / v"></div>
-        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(4)">+ Add</button></div>
+        <div class="vig"><label>Word</label><input class="vinp" id="vw-7" placeholder="New word..." onkeydown="if(event.key==='Enter')addV(7)"></div>
+        <div class="vig"><label>Part of Speech</label><input class="vinp" id="vp-7" placeholder="adj / n / v"></div>
+        <div style="display:flex;align-items:flex-end"><button class="vaddbtn" onclick="addV(7)">+ Add</button></div>
         <div class="vdr">
-          <div class="vig"><label>Definition</label><input class="vinp" id="vd-4" placeholder="Meaning..."></div>
-          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-4" placeholder="Use it..."></div>
+          <div class="vig"><label>Definition</label><input class="vinp" id="vd-7" placeholder="Meaning..."></div>
+          <div class="vig"><label>Your sentence</label><input class="vinp" id="vs-7" placeholder="Use it..."></div>
         </div>
       </div>
     </div>
     <hr class="div">
     <div class="pb">
       <div class="ph"><span class="pico">✦</span><span class="plbl">Favorite Passage + Close Reading</span><span class="stag">SAT: Close Reading</span></div>
-      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t4-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(4)" rows="2"></textarea></div>
-      <textarea class="jta" id="t4-wy" placeholder="Device → effect → what the author achieves that a different choice couldn't..." oninput="as(4)" rows="3"></textarea>
+      <div class="evbox"><div class="evlbl">Exact quote:</div><textarea class="qta" id="t7-qt" placeholder="&ldquo; ...&rdquo;" oninput="as(7)" rows="2"></textarea></div>
+      <textarea class="jta" id="t7-wy" placeholder="Device → effect → what the author achieves that a different choice couldn't..." oninput="as(7)" rows="3"></textarea>
     </div>
   </div>
-  <div class="savebar"><span class="savn" id="sv-4">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(4)">Clear</button><button class="savebtn" onclick="save(4)">Save Journal</button></div></div>
-  <div class="pgnum">Page 5 of 5</div>
+  <div class="savebar"><span class="savn" id="sv-7">✓ Saved</span><div style="display:flex;gap:8px"><button class="clrbtn" onclick="clr(7)">Clear</button><button class="savebtn" onclick="save(7)">Save Journal</button></div></div>
+  <div class="pgnum">Page 8 of 8</div>
 </div>
 
-</div><!-- /journal -->
 
+
+</div><!-- /journal -->
 <script>
 const KEY='j12_sat_v1';
 let D={};
@@ -736,7 +929,7 @@ function rvoc(i){
   const vs=(D['b'+i]||{}).v||[];
   el.innerHTML=vs.map((v,j)=>`<div class="vc"><div><div class="vw">${v.w}</div><div class="vps">${v.p||''}</div><div class="vd">${v.d||'<em style="color:#bbb">No definition yet</em>'}</div>${v.s?`<div class="vs2">"${v.s}"</div>`:''}</div><button class="vdel" onclick="rmV(${i},${j})">×</button></div>`).join('');
 }
-function updVc(){let t=0;for(let i=0;i<5;i++)t+=((D['b'+i]||{}).v||[]).length;document.getElementById('vcnt').textContent=t;}
+function updVc(){let t=0;for(let i=0;i<8;i++)t+=((D['b'+i]||{}).v||[]).length;document.getElementById('vcnt').textContent=t;}
 function setSt(i,s,btn){
   if(!D['b'+i])D['b'+i]={};D['b'+i].s=s;
   document.querySelectorAll(`#p-${i} .sbtn`).forEach(b=>b.classList.remove('on'));btn.classList.add('on');
@@ -744,14 +937,14 @@ function setSt(i,s,btn){
   updProg();persist();
 }
 function setR(i,v){if(!D['b'+i])D['b'+i]={};D['b'+i].r=v;document.querySelectorAll(`#stars-${i} .star`).forEach((s,j)=>s.classList.toggle('lit',j<v));persist();}
-function updProg(){let done=0;for(let i=0;i<5;i++)if((D['b'+i]||{}).s==='Finished')done++;const pct=Math.round(done/5*100);document.getElementById('pFill').style.width=pct+'%';document.getElementById('pPct').textContent=pct+'%';document.getElementById('bcnt').textContent=done+'/5';}
+function updProg(){let done=0;for(let i=0;i<8;i++)if((D['b'+i]||{}).s==='Finished')done++;const pct=Math.round(done/8*100);document.getElementById('pFill').style.width=pct+'%';document.getElementById('pPct').textContent=pct+'%';document.getElementById('bcnt').textContent=done+'/8';}
 function sw(n,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.getElementById(`p-${n}`).classList.add('active');btn.classList.add('active');}
 function updI(){document.getElementById('itd').textContent=document.getElementById('iT').value||'Independent Reading';document.getElementById('ita').textContent=document.getElementById('iA').value||'Brothers Karamazov · The Road · or your approved title';}
 function as(i){save(i,true);}
 function save(i,silent=false){
   if(!D['b'+i])D['b'+i]={};
   ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)D['b'+i][k]=el.value;});
-  if(i===4){D['b4'].iT=document.getElementById('iT').value;D['b4'].iA=document.getElementById('iA').value;}
+  if(i===7){D['b7'].iT=document.getElementById('iT').value;D['b4'].iA=document.getElementById('iA').value;}
   persist();if(!silent){const el=document.getElementById(`sv-${i}`);el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
 }
 function clr(i){if(!confirm('Clear all entries for this book?'))return;const keep={s:D['b'+i]?.s,r:D['b'+i]?.r,v:[]};D['b'+i]=keep;['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el)el.value='';});rvoc(i);updVc();persist();}
@@ -760,8 +953,8 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){}}
 function exportTxt(){
   const name=D.sN||'Student';
   let out=`12TH GRADE SUMMER READING JOURNAL — SAT EDITION\nStudent: ${name} | School: ${D.sSc||''} | Summer: ${D.sYr||'2026'}\n${'='.repeat(60)}\n\n`;
-  const books=['Hamlet','Crime and Punishment','Things Fall Apart','One Hundred Years of Solitude','Independent Reading'];
-  for(let i=0;i<5;i++){
+  const books=['Hamlet','Crime and Punishment','Things Fall Apart','One Hundred Years of Solitude','Macbeth','The Brothers Karamazov','The Road','Independent Reading'];
+  for(let i=0;i<8;i++){
     const b=D['b'+i]||{};
     out+=`BOOK ${i+1}: ${books[i].toUpperCase()}\n${'-'.repeat(40)}\n`;
     if(b.p1)out+=`\nPROMPT 1:\n${b.p1}\n`;
@@ -779,7 +972,7 @@ function exportTxt(){
 function load(){
   try{D=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){D={};}
   ['sN','sSc','sYr'].forEach(id=>{if(D[id])document.getElementById(id).value=D[id];});
-  for(let i=0;i<5;i++){
+  for(let i=0;i<8;i++){
     const b=D['b'+i]||{};
     ['p1','p2','p3','qt','wy','ev'].forEach(k=>{const el=document.getElementById(`t${i}-${k}`);if(el&&b[k])el.value=b[k];});
     if(b.v)rvoc(i);
